@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+body{
+    -webkit-font-smoothing: antialiased;
+}
+
+.input-range__slider {
+  box-shadow: 1px 5px 12px;
+  height: 2rem !important;
+  width: 2rem !important;
+  margin-top: -1.45rem !important;
+}
+
+.input-range__track {
+  height: 0.8rem !important;
+}
+
+.input-range__label--min, .input-range__label--max{
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.input-range__label--value{
+  //font-weight: bold;
+  margin-top: -1.05rem !important;
+  margin-left: 0.5rem;
+}
+
+.toggle-switch-inner::before {
+  background-color: #26C5AF !important;
+}
+
+.toggle-switch.small-switch .toggle-switch-switch {
+  margin-bottom: 2px !important;
+}
+
+.toggle-switch {
+  position: relative;
+  margin-right: 10px;
+  width: 75px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  text-align: left;
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  margin: 0;
+}
+
+.toggle-switch-label:focus {
+  outline: none;
+}
+
+.toggle-switch-label:focus > span {
+  -webkit-box-shadow: 0 0 2px 5px red;
+          box-shadow: 0 0 2px 5px red;
+}
+
+.toggle-switch-label > span:focus {
+  outline: none;
+}
+
+.toggle-switch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s;
+}
+
+.toggle-switch-inner:before, .toggle-switch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 34px;
+  padding: 0;
+  line-height: 34px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.toggle-switch-inner:before {
+  content: attr(data-yes);
+  text-transform: uppercase;
+  padding-left: 10px;
+  background-color: #2F855A;
+  color: #fff;
+}
+
+.toggle-switch-disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.toggle-switch-disabled:before {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.toggle-switch-inner:after {
+  content: attr(data-no);
+  text-transform: uppercase;
+  padding-right: 10px;
+  background-color: #bbb;
+  color: #fff;
+  text-align: right;
+}
+
+.toggle-switch-switch {
+  display: block;
+  width: 24px;
+  margin: 5px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  border: 0 solid #bbb;
+  border-radius: 20px;
+  -webkit-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+  margin-left: 0;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+  right: 0px;
+}
+
+.toggle-switch.small-switch {
+  width: 40px;
+}
+
+.toggle-switch.small-switch .toggle-switch-inner:after, .toggle-switch.small-switch .toggle-switch-inner:before {
+  content: "";
+  height: 20px;
+  line-height: 20px;
+}
+
+.toggle-switch.small-switch .toggle-switch-switch {
+  width: 16px;
+  right: 20px;
+  margin: 2px;
+}
+
+@media screen and (max-width: 991px) {
+  .toggle-switch {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .toggle-switch {
+    -webkit-transform: scale(0.825);
+            transform: scale(0.825);
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .toggle-switch {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
