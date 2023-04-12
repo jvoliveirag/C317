@@ -48,8 +48,8 @@ export const getServerSideProps = async () => {
       axios.get('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
         params: {
           age: 12, 
-          genre: "Comedy", 
-          movie_or_series: "Movie", 
+          genre: "Drama", 
+          movie_or_series: "TV Show", 
           time_to_spend: 180, 
           platforms: "HBO, AmazonPrime", 
           year: 2000
@@ -124,7 +124,7 @@ export default function Recommendation(props: RecommendationProps) {
         <Title></Title>
 
         <div className='ml-16 mt-44'>
-          <ButtonPrevious path="platforms">
+          <ButtonPrevious path="filters">
             <p className='text-white ml-3'>Voltar</p>
           </ButtonPrevious>
         </div>

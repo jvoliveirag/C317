@@ -46,7 +46,7 @@ export default function Filter() {
         <Title></Title>
 
         <div className='ml-16 mt-44'>
-          <ButtonPrevious path="preferences">
+          <ButtonPrevious path="platforms">
             <p className='text-white ml-3'>Voltar</p>
           </ButtonPrevious>
         </div>
@@ -93,7 +93,7 @@ export default function Filter() {
       </div>
 
       <div className='ml-14 mt-64'>
-        <ButtonNext path="/platforms">
+        <ButtonNext path="/recommendation">
           <p className='text-white ml-1'>Avançar</p>
         </ButtonNext>
       </div>

@@ -119,7 +119,7 @@ export default function Genre() {
       </div>
 
       <div className='ml-14 mt-64'>
-        <ButtonNext path="/filters">
+        <ButtonNext path="/platforms">
           <p className='text-white ml-1'>Avançar</p>
         </ButtonNext>
       </div>

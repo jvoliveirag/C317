@@ -41,7 +41,7 @@ export default function Platform() {
         <Title></Title>
 
         <div className='ml-16 mt-44'>
-          <ButtonPrevious path="filters">
+          <ButtonPrevious path="preferences">
             <p className='text-white ml-3'>Voltar</p>
           </ButtonPrevious>
         </div>
@@ -81,7 +81,7 @@ export default function Platform() {
 
       
       <div className='ml-14 mt-64'>
-        <ButtonNext path="/recommendation">
+        <ButtonNext path="/filters">
           <p className='text-white ml-1'>Avançar</p>
         </ButtonNext>
       </div>  
