@@ -10,6 +10,7 @@ export default function Document() {
             <body className='bg-gray-900 bg-app bg-no-repeat bg-cover'>
                 <Main />
                 <NextScript />
+                <script src="../path/to/flowbite/dist/flowbite.min.js" async/>
             </body>
         </Html>
     )
