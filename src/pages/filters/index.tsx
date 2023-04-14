@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import appPreviewImg from '../../assets/claquete.png'
 import { FormEvent, useState } from 'react'
+import { RangeSlider } from "flowbite-react";
 
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
 import Title from '../../components/Title';
-//import InputRangeSlider from '../../components/InputRange';
 import ToggleSwitch from '../../components/Toggle/toggleSwitch'
-//import currentYear from '../../components/CurrentYear/getCurrentYear'
 
 /*
 export class getData{
@@ -70,6 +69,9 @@ export default function Filter() {
           <p className="mt-4 text-sm text-gray-300 leading-relaxed">
             Sua indicação será com base em sua classificação indicativa
           </p>
+          <RangeSlider>
+
+          </RangeSlider>
         </div>
 
         <div className='mt-4'>
@@ -79,6 +81,9 @@ export default function Filter() {
           <p className="mt-4 text-sm text-gray-300 leading-relaxed">
             A busca será feita por filmes lançados a partir desse ano
           </p>
+          <RangeSlider>
+            
+          </RangeSlider>
         </div>
 
         <div className='mt-4'>
