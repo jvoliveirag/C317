@@ -1,16 +1,16 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
+
     return (
         <Html>
             <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet" />
             </Head>
-            <body className='bg-gray-900 bg-app bg-no-repeat bg-cover'>
+            <body className='lg:bg-app lg:bg-cover lg:bg-no-repeat bg-black'>
                 <Main />
                 <NextScript />
-                <script src="../path/to/flowbite/dist/flowbite.min.js" async/>
             </body>
         </Html>
     )

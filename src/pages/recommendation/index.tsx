@@ -151,7 +151,7 @@ export default function Recommendation(props: RecommendationProps) {
       <div className='mt-8 mr-24 ml-24 col-start-2 col-end-6 grid grid-cols-3 gap-10'>
         <div>
           <Link href="/recommendation"><button 
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline hover:bg-indigo-800 "
                 type="submit"
               >
                 Gerar Novamente
@@ -161,7 +161,7 @@ export default function Recommendation(props: RecommendationProps) {
 
         <div>
           <Link href="/preferences"><button 
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline hover:bg-indigo-800 "
                 type="submit"
               >
                 Recomeçar
@@ -170,11 +170,11 @@ export default function Recommendation(props: RecommendationProps) {
         </div>
 
         <div>
-          <Link href='https://www.netflix.com/'><button 
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-lg focus:shadow-outline hover:bg-indigo-800 "
+          <Link href=''><button 
+                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline hover:bg-indigo-800 "
                 type="submit"
               >
-                Ir para a plataforma
+                Salvar
             </button>
           </Link>
         </div>

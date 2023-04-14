@@ -56,10 +56,10 @@ export default function Filter() {
         <div className='mt-0 text-white'>
           <h1 className="text-white text-2xl font-semibold leading-tight">
             Prefere um filminho ou uma seriezinha?
-            <small className="ml-8 flex-1 text-xl text-white text-right pr-2 py-1">Filme</small>
-            <ToggleSwitch id='movie' checked={serie} onChange={setMovie} />
-            <small className="flex-1 text-xl text-white text-right pr-2 py-1">Série</small>
           </h1>
+          <small className="text-xl text-white text-right pr-2 py-1">Filme</small>
+            <ToggleSwitch id='movie' checked={serie} onChange={setMovie} />
+          <small className="text-xl text-white text-right pr-2 py-1">Série</small>
         </div>
 
         <div className='mt-8'>
