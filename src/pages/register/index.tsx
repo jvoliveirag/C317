@@ -23,7 +23,7 @@ export default function Register() {
                             <input type="text" name="email" placeholder="E-mail" className='rounded-3xl'/>
                             <input type="password" name="password" placeholder="Senha" className='rounded-3xl'/>
                             <input type="password" name="password" placeholder="Confirmar senha" className='rounded-3xl'/>
-                            <button type="submit" className='rounded-3xl h-10 text-xl bg-orange-700 font-bold'>Criar conta</button>
+                            <button type="submit" className='mt-4 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-indigo-800 hover:text-white'>Criar conta</button>
                         </div>
                     </form>
                 </div>

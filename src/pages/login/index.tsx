@@ -20,16 +20,16 @@ export default function Login() {
                         <div className="login-form-inputs flex flex-col gap-2">
                             <input type="text" name="username" placeholder="E-mail" className='rounded-3xl'/>
                             <input type="password" name="password" placeholder="Senha" className='rounded-3xl'/>
-                            <button type="submit" className='rounded-3xl h-10 text-xl bg-orange-700 font-bold'>Entrar</button>
+                            <button type="submit" className='rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-indigo-800 hover:text-white'>Entrar</button>
                         </div>
                         <div className='mt-6 flex flex-col gap-2 text-white'>
-                            <span className='flex justify-center hover:text-orange-700'>
+                            <span className='flex justify-center hover:text-orange-400'>
                                 <Link href="/">
                                     Esqueci minha senha
                                 </Link>
                             </span>
                             <p>Não tem uma conta?   
-                                <span className='text-orange-700 font-semibold hover:text-orange-400 ml-1'>  
+                                <span className='text-orange-400 font-semibold hover:text-indigo-800 ml-2'>  
                                     <Link href="/register">
                                         Cadastre-se
                                     </Link>

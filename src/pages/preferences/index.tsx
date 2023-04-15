@@ -52,9 +52,7 @@ export default function Genre() {
         <Title></Title>
 
         <div className='ml-16 mt-44'>
-          <ButtonPrevious path="/">
-            <p className='text-white ml-3'>Voltar</p>
-          </ButtonPrevious>
+          <ButtonPrevious path="/"/>
         </div>
       </div>
 
@@ -119,9 +117,7 @@ export default function Genre() {
       </div>
 
       <div className='ml-14 mt-64'>
-        <ButtonNext path="/platforms">
-          <p className='text-white ml-1'>Avançar</p>
-        </ButtonNext>
+        <ButtonNext path="/platforms"/>
       </div>
 
     </div>

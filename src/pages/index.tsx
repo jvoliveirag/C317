@@ -27,7 +27,7 @@ export default function Home() {
         <div className='mr-40 ml-40 col-start-2 col-end-6 grid grid-cols-2 gap-6'>
           <div>
             <Link href="/preferences"><button 
-                  className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline"
+                  className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
                   type="submit"
                 >
                   Começar
@@ -37,7 +37,7 @@ export default function Home() {
 
           <div>
             <Link href="/recommendation"><button 
-                  className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline"
+                  className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
                   type="submit"
                 >
                   Surpreenda-me

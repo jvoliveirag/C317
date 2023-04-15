@@ -124,9 +124,7 @@ export default function Recommendation(props: RecommendationProps) {
         <Title></Title>
 
         <div className='ml-16 mt-44'>
-          <ButtonPrevious path="filters">
-            <p className='text-white ml-3'>Voltar</p>
-          </ButtonPrevious>
+          <ButtonPrevious path="filters" />
         </div>
       </div>
 
@@ -151,7 +149,7 @@ export default function Recommendation(props: RecommendationProps) {
       <div className='mt-8 mr-24 ml-24 col-start-2 col-end-6 grid grid-cols-3 gap-10'>
         <div>
           <Link href="/recommendation"><button 
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline hover:bg-indigo-800 "
+                className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
                 type="submit"
               >
                 Gerar Novamente
@@ -161,7 +159,7 @@ export default function Recommendation(props: RecommendationProps) {
 
         <div>
           <Link href="/preferences"><button 
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline hover:bg-indigo-800 "
+                className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
                 type="submit"
               >
                 Recomeçar
@@ -171,7 +169,7 @@ export default function Recommendation(props: RecommendationProps) {
 
         <div>
           <Link href=''><button 
-                className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 w-full h-12 px-6 text-indigo-100 duration-150 bg-orange-500 rounded-3xl focus:shadow-outline hover:bg-indigo-800 "
+                className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
                 type="submit"
               >
                 Salvar

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import appPreviewImg from '../../assets/claquete.png'
 import { FormEvent, useState } from 'react'
 import { RangeSlider } from "flowbite-react";
 
@@ -35,9 +34,7 @@ export default function Filter() {
         <Title></Title>
 
         <div className='ml-16 mt-44'>
-          <ButtonPrevious path="platforms">
-            <p className='text-white ml-3'>Voltar</p>
-          </ButtonPrevious>
+          <ButtonPrevious path="platforms"/>
         </div>
       </div>
 
@@ -88,9 +85,7 @@ export default function Filter() {
       </div>
 
       <div className='ml-14 mt-64'>
-        <ButtonNext path="/recommendation">
-          <p className='text-white ml-1'>Avançar</p>
-        </ButtonNext>
+        <ButtonNext path="/recommendation"/>
       </div>
 
     </div>
