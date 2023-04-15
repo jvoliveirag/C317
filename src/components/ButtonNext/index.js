@@ -1,18 +1,17 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import next from '../../assets/seta-next.png'
+import arrowNext from '../../assets/arrow-next.png'
 
-export default function ButtonNext({ children, path }) { 
+export default function ButtonNext({ path }) { 
     return (
         <div>
             <Link href={path}><Image 
-                src={next} 
+                src={arrowNext} 
                 alt="" 
                 quality={100}
                 width={70}
                 height={70}
             /></Link>
-            {children}
         </div>
     )
 }
