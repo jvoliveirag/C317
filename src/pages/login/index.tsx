@@ -24,7 +24,7 @@ export default function Login() {
                         </div>
                         <div className='mt-6 flex flex-col gap-2 text-white'>
                             <span className='flex justify-center hover:text-orange-400'>
-                                <Link href="/">
+                                <Link href="/recover">
                                     Esqueci minha senha
                                 </Link>
                             </span>
