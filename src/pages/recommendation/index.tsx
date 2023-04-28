@@ -1,44 +1,14 @@
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'rc-image';
 import axios from 'axios';
-import { FormEvent, useState, useEffect } from 'react'
-
-import { ITask, TaskService } from '../../services/api/tasks/TaskService';
-import { ApiException } from '../../services/api/ApiException'
-
+import { useState } from 'react';
 import ButtonPrevious from '../../components/ButtonPrevious';
 import Title from '../../components/Title';
+import notfound from '../../../public/notfound.png'
 
-import age from '../filters';
-import duration from '../filters';
-import year from '../filters';
-//import genre from '../genre';
-//import movie_or_tv from '../movie_or_tv';
-//import platforms from '../platforms';
 
-/*
-export const Dashboard = () => {
-
-  useEffect(() => {
-    TaskService.getAll({
-      age: 12, 
-      genre: "Comedy", 
-      movie_or_series: "Movie", 
-      time_to_spend: 180, 
-      platforms: "HBO, AmazonPrime", 
-      year: 2000
-    })
-      .then((result) => {
-        if (result instanceof ApiException) {
-          alert(result.message);
-        } else {
-          console.log(result);
-        }
-      });
-  });
-
-}
-*/
+const OMDB_API_KEY = '79161b2d';
+const OMDB_BASE_URL = 'http://www.omdbapi.com/';
 
 export const getServerSideProps = async () => {
   
@@ -48,19 +18,11 @@ export const getServerSideProps = async () => {
       axios.get('https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe', {
         params: {
           age: 12, 
-          genre: "Drama", 
+          genre: "Comedy", 
           movie_or_series: "TV Show", 
           time_to_spend: 180, 
-          platforms: "HBO, AmazonPrime", 
+          platforms: "HBO, Netflix", 
           year: 2000
-        /*
-          age: age, 
-          genre: genre, 
-          movie_or_series: movie_or_tv, 
-          time_to_spend: duration, 
-          platforms: platforms, 
-          year: year 
-        */
       } 
     }))
     return {
@@ -75,28 +37,9 @@ export const getServerSideProps = async () => {
     }
   } catch(err) {
     console.log(err)
-    alert('Falha ao gerar indicação, tente novamente!')
-  }
-
+    return { props: { error: "Falha ao gerar indicação, tente novamente!" } }  }
 }
  
-/*
-function defineDuration(props: RecommendationProps){
-  if(props.type === 'Movie'){
-    let min = props.duration%60
-    let hour = (props.duration-min)/60
-    //console.log(hour+'h'+min+'min')
-    let time = hour+'h'+min+'min'
-    let timeStr = time.toString()
-    props.time = timeStr
-  }
-  //console.log(duration+' temporadas')
-  let season = duration+' temporadas'
-  let seasonStr = season.toString()
-  props.time = seasonStr
-}
-*/
-
 interface RecommendationProps {
     title: string
     released: number
@@ -106,6 +49,23 @@ interface RecommendationProps {
     duration: number
     time: string
 }
+
+interface Info {
+  Title: string;
+  Year: number;
+  Poster: string;
+}
+
+async function searchByTitleAndYear(title: string, year: number): Promise<Info[]> {
+  const response = await axios.get(`${OMDB_BASE_URL}?apikey=${OMDB_API_KEY}&s=${title}&y=${year}`);
+
+  if (response.data.Response === 'False') {
+    throw new Error(response.data.Error);
+  }
+
+  return response.data.Search
+}
+
 
 export default function Recommendation(props: RecommendationProps) {
 
@@ -117,10 +77,22 @@ export default function Recommendation(props: RecommendationProps) {
     movie = true
   }
 
-  return (
-    <div className="grid grid-cols-6 gap-4">
+  const [posterUrl, setPosterUrl] = useState<string>('');
 
-      <div className='ml-6 mt-10'>
+  searchByTitleAndYear(props.title, props.released)
+  .then((movies) => {
+    setPosterUrl(movies[0].Poster);
+    console.log(posterUrl);
+  })
+  .catch((error) => {
+    console.error(error);
+    setPosterUrl('/notfound.png')
+  });
+  
+  return (
+    <div className="grid grid-cols-5">
+
+      <div className='flex-1 ml-5 mt-9'>
         <Title></Title>
 
         <div className='ml-16 mt-44'>
@@ -128,56 +100,51 @@ export default function Recommendation(props: RecommendationProps) {
         </div>
       </div>
 
-      <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
+      <div className='flex flex-col col-start-2 col-end-2 mt-20'>
+        <Image 
+          src= {posterUrl}
+          alt="Poster" 
+          width='110%'
+        />
+      </div>
+      
+      <div className='flex flex-col col-start-3 col-end-5 mt-20 ml-16 gap-8'>
 
-        <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Aqui está algo legal para assistir!
-        </h1>
+        <h1 className="text-white font-semibold text-4xl">{props.title}</h1>
 
-        <div className="mt-8 grid grid-cols-5 gap-4">
-          <div className="flex flex-col col-start-1 col-end-7 text-xl text-white">
-            <span className="">Título: {props.title}</span>
-            <span className="">Lançamento: {props.released}</span>
-            <span className="">Descrição: {props.description}</span>
-            <span className="">Onde assistir: {props.platforms}</span>
-            <span className="">Duração: {props.duration} {movie ? ' minutos' : ' temporadas'}</span> 
-          </div>
+        <div className="flex flex-col col-start-2 col-end-5 text-xl text-white gap-2">
+          <p className="text-xl font-medium">Lançamento: <span className='text-lg font-normal text-orange-400'>{props.released}</span></p>
+          <p className="text-xl font-medium">Onde assistir: <span className='text-lg font-normal text-orange-400'>{props.platforms}</span></p>
+          <p className="text-xl font-medium">Duração: <span className='text-lg font-normal text-orange-400'>{props.duration} {movie ? ' minutos' : ' temporadas'}</span></p> 
         </div>
 
-      </div>
-
-      <div className='mt-8 mr-24 ml-24 col-start-2 col-end-6 grid grid-cols-3 gap-10'>
-        <div>
+        <div className='flex flex-col col-start-2 col-end-5 gap-4'>
           <Link href="/recommendation"><button 
-                className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
-                type="submit"
-              >
-                Gerar Novamente
+            className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
+            type="submit"
+          >
+            Gerar Novamente
             </button>
           </Link>
-        </div>
 
-        <div>
           <Link href="/preferences"><button 
-                className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
-                type="submit"
-              >
-                Recomeçar
+            className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
+            type="submit"
+          >
+            Recomeçar
             </button>
           </Link>
-        </div>
 
-        <div>
           <Link href=''><button 
-                className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
-                type="submit"
-              >
-                Salvar
+            className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
+            type="submit"
+          >
+            Salvar
             </button>
           </Link>
         </div>
       </div>
-
+      
     </div>
   )
 }
