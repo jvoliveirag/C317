@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
-import Title from '../../components/Title'
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 
 export default function Register() {
@@ -9,7 +8,6 @@ export default function Register() {
             <div className='flex flex-col flex-1'>
                 <div className='flex flex-col justify-center items-center'>
                     <div className='mt-16'>
-                        <Title></Title>
                     </div>
                     <div className='mt-4'>
                         <h1 className='font-bold text-3xl text-left text-white'>Faça seu cadastro</h1>
@@ -23,7 +21,7 @@ export default function Register() {
                             <input type="text" name="email" placeholder="E-mail" className='rounded-3xl'/>
                             <input type="password" name="password" placeholder="Senha" className='rounded-3xl'/>
                             <input type="password" name="password" placeholder="Confirmar senha" className='rounded-3xl'/>
-                            <button type="submit" className='mt-4 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-indigo-800 hover:text-white'>Criar conta</button>
+                            <button type="submit" className='text-white mt-4 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-purple-400 hover:text-white'>Criar conta</button>
                         </div>
                     </form>
                 </div>

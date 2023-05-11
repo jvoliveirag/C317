@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'rc-image';
 import axios from 'axios';
 import { useState } from 'react';
-import ButtonPrevious from '../../components/ButtonPrevious';
-import Title from '../../components/Title';
-import notfound from '../../../public/notfound.png'
-
+import Head from 'next/head';
+import { NavBar } from '../../components/NavBar';
+import { FaRedo, FaHome, FaBookmark, FaArrowLeft } from "react-icons/fa";
+import { toNumber } from 'cypress/types/lodash';
 
 const OMDB_API_KEY = '79161b2d';
 const OMDB_BASE_URL = 'https://www.omdbapi.com/';
@@ -69,6 +69,7 @@ async function searchByTitleAndYear(title: string, year: number): Promise<Info[]
 
 export default function Recommendation(props: RecommendationProps) {
 
+  let userLogged = false //logica para verificar se user esta logado
   let type = ''
   type = props.type
 
@@ -90,61 +91,90 @@ export default function Recommendation(props: RecommendationProps) {
   });
   
   return (
-    <div className="grid grid-cols-5">
+    <>
+      <Head>
+        <title>PickMe</title>
+      </Head>
+        
+      <div className='h-screen flex flex-col'>  
+        <NavBar linkName={['Perfil', 'Coleção', 'Ajuda', 'Contato']} linkPath={['/profile', '/collection', '#', '#']} />
 
-      <div className='flex-1 ml-5 mt-9'>
-        <Title></Title>
+        <main className='md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10'>
 
-        <div className='ml-16 mt-44'>
-          <ButtonPrevious path="filters" />
-        </div>
+          <div className="flex items-center justify-center">
+
+            <div className='mb:mt-8'>
+
+              <h1 className="mt-8 text-white text-4xl font-bold leading-tight flex justify-center items-center">
+                {props.title}
+              </h1>
+
+              <div className='mt-8 flex items-center justify-center pointer-events-none'>
+                <Image 
+                  src= {posterUrl}
+                  alt="Poster" 
+                  width={230}
+                />
+              </div>
+
+              <div className='mt-4 items-center justify-center grid col-start-2 col-end-3 text-white gap-2'>
+                <p className="text-xl font-medium">Lançamento: <span className='text-lg font-normal text-orange-400'>{props.released}</span></p>
+                <p className="text-xl font-medium">Onde assistir: <span className='text-lg font-normal text-orange-400'>{props.platforms}</span></p>
+                <p className="text-xl font-medium">Duração: <span className='text-lg font-normal text-orange-400'>{props.duration} {movie ? ' minutos' : ' temporadas'}</span></p> 
+              </div>
+
+              <div className='mt-8 flex items-center justify-center gap-4'>
+                <div className='flex justify-center md:relative'>
+                  <Link href="/recommendation"><button 
+                        className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                        type="submit"
+                      >
+                        <FaRedo/>
+                    </button>
+                  </Link>
+                </div>
+
+                <div className='flex justify-center md:relative'>
+                  <Link href="/"><button 
+                        className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                        type="submit"
+                      >
+                        <FaHome/>
+                    </button>
+                  </Link>
+                </div>
+
+                <div className='flex justify-center md:relative'>
+                  <Link href={userLogged ? '#' : '/login'}><button 
+                        className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                        type="submit"
+                      >
+                        <FaBookmark/>
+                    </button>
+                  </Link>
+                </div>
+
+                <div className='flex justify-center md:relative'>
+                  <Link href="/filters"><button 
+                        className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                        type="submit"
+                      >
+                        <FaArrowLeft/>
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </main>
+
+        <footer className='flex items-center justify-center text-sm align-baseline text-white'>
+          <p>₢ 2023 PickMe | Todos os direitos reservados</p>
+        </footer>
+
       </div>
-
-      <div className='flex flex-col col-start-2 col-end-2 mt-20'>
-        <Image 
-          src= {posterUrl}
-          alt="Poster" 
-          width='110%'
-        />
-      </div>
-      
-      <div className='flex flex-col col-start-3 col-end-5 mt-20 ml-16 gap-8'>
-
-        <h1 className="text-white font-semibold text-4xl">{props.title}</h1>
-
-        <div className="flex flex-col col-start-2 col-end-5 text-xl text-white gap-2">
-          <p className="text-xl font-medium">Lançamento: <span className='text-lg font-normal text-orange-400'>{props.released}</span></p>
-          <p className="text-xl font-medium">Onde assistir: <span className='text-lg font-normal text-orange-400'>{props.platforms}</span></p>
-          <p className="text-xl font-medium">Duração: <span className='text-lg font-normal text-orange-400'>{props.duration} {movie ? ' minutos' : ' temporadas'}</span></p> 
-        </div>
-
-        <div className='flex flex-col col-start-2 col-end-5 gap-4'>
-          <Link href="/recommendation"><button 
-            className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
-            type="submit"
-          >
-            Gerar Novamente
-            </button>
-          </Link>
-
-          <Link href="/preferences"><button 
-            className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
-            type="submit"
-          >
-            Recomeçar
-            </button>
-          </Link>
-
-          <Link href=''><button 
-            className="font-bold text-xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-indigo-800 hover:text-white"
-            type="submit"
-          >
-            Salvar
-            </button>
-          </Link>
-        </div>
-      </div>
-      
-    </div>
+    </>
   )
 }

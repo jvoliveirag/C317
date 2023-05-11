@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import React, { useState, useEffect } from 'react'
-import Title from '../../components/Title'
 
 export default function Recover() {
     return (
@@ -14,7 +13,6 @@ export default function Recover() {
                     <div className='flex flex-col flex-1'>
                         <div className='flex flex-col justify-center items-center'>
                             <div className='mt-16'>
-                                <Title></Title>
                             </div>
                             <div className='mt-4'>
                                 <h1 className='font-bold text-3xl text-left text-white'>Redefinir sua senha</h1>
@@ -27,7 +25,7 @@ export default function Recover() {
                                     <input type="password" name="password" placeholder="Senha" className='rounded-3xl' />
                                     <input type="password" name="password" placeholder="Confirmar senha" className='rounded-3xl' />
 
-                                    <button type="submit" className='mt-8 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-indigo-800 hover:text-white'>Redefinir senha</button>
+                                    <button type="submit" className='text-white mt-8 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-purple-400 hover:text-white'>Redefinir senha</button>
                                 </div>
                             </form>
                         </div>

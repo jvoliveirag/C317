@@ -2,7 +2,6 @@ import { FormEvent, useState } from 'react'
 
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
-import Title from '../../components/Title';
 import Options from '../../components/Options/options'
 
 import disney from '../../assets/disneyPlus.png'
@@ -10,6 +9,8 @@ import hbo from '../../assets/hboMax.png'
 import netflix from '../../assets/netflix.png'
 import prime from '../../assets/primeVideo.png'
 
+import Head from 'next/head';
+import { NavBar } from '../../components/NavBar';
 
 export default function Platform() {
 
@@ -35,53 +36,67 @@ export default function Platform() {
   //console.log(platforms.toString())
 
   return (
-    <div className="grid grid-cols-6 gap-4">
 
-      <div className='ml-6 mt-10'>
-        <Title></Title>
+    <>
+      <Head>
+        <title>PickMe</title>
+      </Head>
+        
+      <div className='h-screen flex flex-col'>  
+        <NavBar linkName={['Perfil', 'Coleção', 'Ajuda', 'Contato']} linkPath={['/profile', '/collection', '#', '#']} />
 
-        <div className='ml-16 mt-44'>
-          <ButtonPrevious path="preferences"/>
-        </div>
+        <main className='flex items-center justify-center flex-wrap flex-col flex-1 pb-10'>
+
+          <div className="flex items-center justify-center">
+
+            <div className='invisible md:visible xl:px-32 lg:px-24'>
+              <ButtonPrevious path="/preferences"/>
+            </div>
+
+            <div className="pb-20">
+
+              <h1 className="text-white text-4xl font-bold leading-tight flex justify-center items-center">
+                Selecione seu(s) serviço(s) de streaming
+              </h1>
+
+              <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                  <Options id='disney' checked={plat_disney} onChange={setDisney} img={disney}>
+                  </Options>
+                </label>
+                
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                  <Options id='hbo' checked={plat_hbo} onChange={setHbo} img={hbo}>
+                  </Options>
+                </label>
+
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                  <Options id='netflix' checked={plat_netflix} onChange={setNetflix} img={netflix}>
+                  </Options>
+                </label>
+                
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                  <Options id='prime' checked={plat_prime} onChange={setPrime} img={prime}>
+                  </Options>
+                </label>
+
+              </div>
+
+            </div>
+
+            <div className='invisible md:visible xl:px-32 lg:px-24'>
+              <ButtonNext path="/filters"/>
+            </div>
+
+          </div>
+        </main>
+
+        <footer className='flex items-center justify-center text-sm align-baseline text-white'>
+          <p>₢ 2023 PickMe | Todos os direitos reservados</p>
+        </footer>
+
       </div>
-
-      <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
-
-        <h1 className="text-white text-4xl font-bold leading-tight">
-          Selecione seu(s) serviço(s) de streaming
-        </h1>
-
-        <div className="mt-28 grid grid-cols-4 gap-4">
-
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={plat_disney} onChange={setDisney} img={disney}>
-            </Options>
-          </label>
-          
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={plat_hbo} onChange={setHbo} img={hbo}>
-            </Options>
-          </label>
-
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={plat_netflix} onChange={setNetflix} img={netflix}>
-            </Options>
-          </label>
-          
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={plat_prime} onChange={setPrime} img={prime}>
-            </Options>
-          </label>
-
-        </div>
-
-      </div>
-
-      
-      <div className='ml-14 mt-64'>
-        <ButtonNext path="/filters"/>
-      </div>  
-
-    </div>
+    </>
   )
 }

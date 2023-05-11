@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { FormEvent, useState } from 'react'
 
 import action from '../../assets/action.png'
@@ -8,9 +7,10 @@ import fiction from '../../assets/fiction.png'
 import horror from '../../assets/horror.png'
 import romance from '../../assets/romance.png'
 
+import Head from 'next/head'
+import { NavBar } from '../../components/NavBar'
 import ButtonPrevious from '../../components/ButtonPrevious';
 import ButtonNext from '../../components/ButtonNext';
-import Title from '../../components/Title';
 import Options from '../../components/Options/options'
 
 
@@ -46,80 +46,95 @@ export default function Genre() {
   console.log(platforms)
 
   return (
-    <div className="grid grid-cols-6 gap-4">
 
-      <div className='ml-6 mt-10'>
-        <Title></Title>
+    <>
+      <Head>
+        <title>PickMe</title>
+      </Head>
+        
+      <div className='h-screen flex flex-col'>  
+        <NavBar linkName={['Perfil', 'Coleção', 'Ajuda', 'Contato']} linkPath={['/profile', '/collection', '#', '#']} />
 
-        <div className='ml-16 mt-44'>
-          <ButtonPrevious path="/"/>
-        </div>
+        <main className='flex items-center justify-center flex-wrap flex-col flex-1 pb-10'>
+
+          <div className="flex items-center justify-center">
+
+            <div className='invisible md:visible xl:px-32 lg:px-24'>
+              <ButtonPrevious path="/"/>
+            </div>
+
+            <div className=''>
+
+              <h1 className="text-white text-4xl font-bold leading-tight flex justify-center items-center">
+                Gênero que mais gostaria de assistir
+              </h1>
+
+              <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
+
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                  <Options id='action' checked={gen_action} onChange={setAction} img={action}>
+                    <header className="px-2.5 py-2.5">
+                      <p className="text-lg text-center font-bold tracking-wide text-white">Ação</p>
+                    </header>
+                  </Options>
+                </label>
+                
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                  <Options id='comedy' checked={gen_comedy} onChange={setComedy} img={comedy}>
+                    <header className="px-2.5 py-2.5">
+                      <p className="text-lg text-center font-bold tracking-wide text-white">Comédia</p>
+                    </header>
+                  </Options>
+                </label>
+
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                  <Options id='drama' checked={gen_drama} onChange={setDrama} img={drama}>
+                    <header className="px-2.5 py-2.5">
+                      <p className="text-lg text-center font-bold tracking-wide text-white">Drama</p>
+                    </header>
+                  </Options>
+                </label>
+                
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                  <Options id='fiction' checked={gen_fiction} onChange={setFiction} img={fiction}>
+                    <header className="px-2.5 py-2.5">
+                      <p className="text-lg text-center font-bold tracking-wide text-white">Ficção</p>
+                    </header>
+                  </Options>
+                </label>
+
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                  <Options id='horror' checked={gen_horror} onChange={setHorror} img={horror}>
+                    <header className="px-2.5 py-2.5">
+                      <p className="text-lg text-center font-bold tracking-wide text-white">Terror</p>
+                    </header>
+                  </Options>
+                </label>
+
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                  <Options id='romance' checked={gen_romance} onChange={setRomance} img={romance}>
+                    <header className="px-2.5 py-2.5">
+                      <p className="text-lg text-center font-bold tracking-wide text-white">Romance</p>
+                    </header>
+                  </Options>
+                </label>
+                
+              </div>
+
+            </div>
+
+            <div className='invisible md:visible xl:px-32 lg:px-24'>
+              <ButtonNext path="/platforms"/>
+            </div>
+
+          </div>
+        </main>
+
+        <footer className='flex items-center justify-center text-sm align-baseline text-white'>
+          <p>₢ 2023 PickMe | Todos os direitos reservados</p>
+        </footer>
+
       </div>
-
-      <div className="col-start-2 col-end-6 mr-14 ml-14 mt-20">
-
-        <h1 className="mt-0 text-white text-4xl font-bold leading-tight">
-          Gênero que mais gostaria de assistir
-        </h1>
-
-        <div className="ml-3 mt-8 grid grid-cols-3 gap-10">
-
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={gen_action} onChange={setAction} img={action}>
-              <header className="px-2.5 py-2.5">
-                <p className="text-lg text-center font-bold tracking-wide text-white">Ação</p>
-              </header>
-            </Options>
-          </label>
-          
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={gen_comedy} onChange={setComedy} img={comedy}>
-              <header className="px-2.5 py-2.5">
-                <p className="text-lg text-center font-bold tracking-wide text-white">Comédia</p>
-              </header>
-            </Options>
-          </label>
-
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={gen_drama} onChange={setDrama} img={drama}>
-              <header className="px-2.5 py-2.5">
-                <p className="text-lg text-center font-bold tracking-wide text-white">Drama</p>
-              </header>
-            </Options>
-          </label>
-          
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={gen_fiction} onChange={setFiction} img={fiction}>
-              <header className="px-2.5 py-2.5">
-                <p className="text-lg text-center font-bold tracking-wide text-white">Ficção</p>
-              </header>
-            </Options>
-          </label>
-
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={gen_horror} onChange={setHorror} img={horror}>
-              <header className="px-2.5 py-2.5">
-                <p className="text-lg text-center font-bold tracking-wide text-white">Terror</p>
-              </header>
-            </Options>
-          </label>
-
-          <label className="relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-            <Options id='disney' checked={gen_romance} onChange={setRomance} img={romance}>
-              <header className="px-2.5 py-2.5">
-                <p className="text-lg text-center font-bold tracking-wide text-white">Romance</p>
-              </header>
-            </Options>
-          </label>
-          
-        </div>
-
-      </div>
-
-      <div className='ml-14 mt-64'>
-        <ButtonNext path="/platforms"/>
-      </div>
-
-    </div>
+    </>
   )
 }

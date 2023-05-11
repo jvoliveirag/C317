@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
-import Title from '../../components/Title'
 
 export default function Login() {
     return (
@@ -8,7 +7,6 @@ export default function Login() {
             <div className='flex flex-col flex-1'>
                 <div className='flex flex-col justify-center items-center'>
                     <div className='mt-16'>
-                        <Title></Title>
                     </div>
                     <div className='mt-4'>
                         <h1 className='font-bold text-3xl text-left text-white'>Faça seu login</h1>
@@ -20,7 +18,7 @@ export default function Login() {
                         <div className="login-form-inputs flex flex-col gap-2">
                             <input type="text" name="username" placeholder="E-mail" className='rounded-3xl'/>
                             <input type="password" name="password" placeholder="Senha" className='rounded-3xl'/>
-                            <button type="submit" className='rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-indigo-800 hover:text-white'>Entrar</button>
+                            <button type="submit" className='text-white rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-purple-400 hover:text-white'>Entrar</button>
                         </div>
                         <div className='mt-6 flex flex-col gap-2 text-white'>
                             <span className='flex justify-center hover:text-orange-400'>
@@ -29,7 +27,7 @@ export default function Login() {
                                 </Link>
                             </span>
                             <p>Não tem uma conta?   
-                                <span className='text-orange-400 font-semibold hover:text-indigo-800 ml-2'>  
+                                <span className='text-orange-400 font-semibold hover:text-purple-400 ml-2'>  
                                     <Link href="/register">
                                         Cadastre-se
                                     </Link>
