@@ -72,7 +72,7 @@ export default function Genre() {
               <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
 
                 <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
-                  <Options id='action' checked={gen_action} onChange={setAction} img={action}>
+                  <Options id='action' checked={gen_action} onChange={setAction} img={action} width={200} height={200}>
                     <header className="px-2.5 py-2.5">
                       <p className="text-lg text-center font-bold tracking-wide text-white">Ação</p>
                     </header>
@@ -80,7 +80,7 @@ export default function Genre() {
                 </label>
                 
                 <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
-                  <Options id='comedy' checked={gen_comedy} onChange={setComedy} img={comedy}>
+                  <Options id='comedy' checked={gen_comedy} onChange={setComedy} img={comedy} width={200} height={200}>
                     <header className="px-2.5 py-2.5">
                       <p className="text-lg text-center font-bold tracking-wide text-white">Comédia</p>
                     </header>
@@ -88,7 +88,7 @@ export default function Genre() {
                 </label>
 
                 <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
-                  <Options id='drama' checked={gen_drama} onChange={setDrama} img={drama}>
+                  <Options id='drama' checked={gen_drama} onChange={setDrama} img={drama} width={200} height={200}>
                     <header className="px-2.5 py-2.5">
                       <p className="text-lg text-center font-bold tracking-wide text-white">Drama</p>
                     </header>
@@ -96,7 +96,7 @@ export default function Genre() {
                 </label>
                 
                 <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
-                  <Options id='fiction' checked={gen_fiction} onChange={setFiction} img={fiction}>
+                  <Options id='fiction' checked={gen_fiction} onChange={setFiction} img={fiction} width={200} height={200}>
                     <header className="px-2.5 py-2.5">
                       <p className="text-lg text-center font-bold tracking-wide text-white">Ficção</p>
                     </header>
@@ -104,7 +104,7 @@ export default function Genre() {
                 </label>
 
                 <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
-                  <Options id='horror' checked={gen_horror} onChange={setHorror} img={horror}>
+                  <Options id='horror' checked={gen_horror} onChange={setHorror} img={horror} width={200} height={200}>
                     <header className="px-2.5 py-2.5">
                       <p className="text-lg text-center font-bold tracking-wide text-white">Terror</p>
                     </header>
@@ -112,7 +112,7 @@ export default function Genre() {
                 </label>
 
                 <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
-                  <Options id='romance' checked={gen_romance} onChange={setRomance} img={romance}>
+                  <Options id='romance' checked={gen_romance} onChange={setRomance} img={romance} width={200} height={200}>
                     <header className="px-2.5 py-2.5">
                       <p className="text-lg text-center font-bold tracking-wide text-white">Romance</p>
                     </header>
