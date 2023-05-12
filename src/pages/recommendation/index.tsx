@@ -5,7 +5,6 @@ import { useState } from 'react';
 import Head from 'next/head';
 import { NavBar } from '../../components/NavBar';
 import { FaRedo, FaHome, FaBookmark, FaArrowLeft } from "react-icons/fa";
-import { toNumber } from 'cypress/types/lodash';
 
 const OMDB_API_KEY = '79161b2d';
 const OMDB_BASE_URL = 'https://www.omdbapi.com/';
@@ -118,9 +117,9 @@ export default function Recommendation(props: RecommendationProps) {
               </div>
 
               <div className='mt-4 items-center justify-center grid col-start-2 col-end-3 text-white gap-2'>
-                <p className="text-xl font-medium">Lançamento: <span className='text-lg font-normal text-orange-400'>{props.released}</span></p>
-                <p className="text-xl font-medium">Onde assistir: <span className='text-lg font-normal text-orange-400'>{props.platforms}</span></p>
-                <p className="text-xl font-medium">Duração: <span className='text-lg font-normal text-orange-400'>{props.duration} {movie ? ' minutos' : ' temporadas'}</span></p> 
+                <p className="text-xl font-medium">Lançamento: <span className='text-2lg font-semibold text-orange-400'>{props.released}</span></p>
+                <p className="text-xl font-medium">Onde assistir: <span className='text-2lg font-semibold text-orange-400'>{props.platforms}</span></p>
+                <p className="text-xl font-medium">Duração: <span className='text-2lg font-semibold text-orange-400'>{props.duration} {movie ? ' minutos' : ' temporadas'}</span></p> 
               </div>
 
               <div className='mt-8 flex items-center justify-center gap-4'>

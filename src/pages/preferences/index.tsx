@@ -65,8 +65,8 @@ export default function Genre() {
 
             <div className=''>
 
-              <h1 className="text-white text-4xl font-bold leading-tight flex justify-center items-center">
-                Gênero que mais gostaria de assistir
+              <h1 className="text-white text-4xl font-bold leading-tight flex justify-center items-center mt-4">
+                Gênero que gostaria de assistir
               </h1>
 
               <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
