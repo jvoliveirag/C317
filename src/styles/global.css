@@ -2,6 +2,14 @@
 @tailwind utilities;
 @tailwind components;
 
-body{
+body {
   -webkit-font-smoothing: antialiased;
+}
+
+.login-form-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 18rem;
+  width: 100%;
 }
