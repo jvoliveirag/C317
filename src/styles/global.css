@@ -13,3 +13,7 @@ body {
   max-width: 18rem;
   width: 100%;
 }
+
+.hidden-visible {
+  display: none;
+}

@@ -10,7 +10,7 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
 
-    let userLogged = false //criar a logica para verificar se o user esta logado
+    let userLogged = true //criar a logica para verificar se o user esta logado
     userLogged ? linkPath[0] : linkPath[0] = '/login'
     userLogged ? linkPath[1] : linkPath[1] = '/login'
 
