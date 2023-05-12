@@ -6,6 +6,8 @@ const Options = ({
   checked,
   onChange,
   img,
+  width,
+  height,
   children
 }) => {
 
@@ -33,8 +35,8 @@ const Options = ({
             src={img} 
             alt="" 
             quality={100}
-            width={200}
-            height={200}
+            width={width}
+            height={height}
           />
         </div>
         {children}
