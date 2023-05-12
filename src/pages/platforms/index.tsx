@@ -61,22 +61,22 @@ export default function Platform() {
 
               <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-2">
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                   <Options id='disney' checked={plat_disney} onChange={setDisney} img={disney} width={150} height={150}>
                   </Options>
                 </label>
                 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                   <Options id='hbo' checked={plat_hbo} onChange={setHbo} img={hbo} width={150} height={150}>
                   </Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                   <Options id='netflix' checked={plat_netflix} onChange={setNetflix} img={netflix} width={150} height={150}>
                   </Options>
                 </label>
                 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:opacity-100 opacity-70 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
                   <Options id='prime' checked={plat_prime} onChange={setPrime} img={prime} width={150} height={150}>
                   </Options>
                 </label>

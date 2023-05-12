@@ -26,3 +26,8 @@ body {
 .hidden-visible {
   display: none;
 }
+
+.selected {
+  border: 3px solid #15113a;
+  transition: border 0.3s ease-in-out;
+}
