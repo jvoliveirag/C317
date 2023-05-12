@@ -38,7 +38,7 @@ export default function Recover(props: UserProps) {
     return (
         <>
             <Head>
-                <title>Recuperar senha</title>
+                <title>Perfil</title>
             </Head>
 
             <div className='h-screen flex flex-col'>
@@ -59,7 +59,7 @@ export default function Recover(props: UserProps) {
                                 <div className='mt-8 flex items-center justify-center pointer-events-none relative w-64 h-64 rounded-full overflow-hidden'>
                                     <Image src={props.img ? props.img : defaultUserImg} alt='' fill style={imageStyle} />
                                 </div>
-                                <form className=''>
+                                <form method="POST" className=''>
                                     <div className="login-form-inputs flex flex-1 flex-col gap-2 mt-8">
 
                                         <input type="text" name="name" placeholder={props.name} className='rounded-3xl' />

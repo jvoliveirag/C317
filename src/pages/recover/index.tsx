@@ -21,7 +21,7 @@ export default function Recover() {
 
                         <div className="login-form flex justify-center mt-20">
                             <div className="login-form-card rounded-lg shadow-lg p-6">
-                                <form>
+                                <form method="POST">
                                     <div className="login-form-inputs flex flex-col gap-2">
                                         <div className='flex justify-center'>
                                             <Image
