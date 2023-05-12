@@ -49,14 +49,14 @@ export default function Filter() {
                 <h1 className="text-white text-2xl font-semibold leading-tight flex-1">
                   Prefere um filminho ou uma seriezinha?
                 </h1>
-                <div className='flex items-center justify-center px-8'>
+                <div className='flex items-center justify-center md:px-8'>
                   <Select options={options} selectedValue={selectedOption} onSelect={handleSelect} />
                 </div>
               </div>
 
               <div className='mt-8'>
                 <h1 className="mb-2 text-white text-xl font-semibold leading-tight">
-                  Selecione sua idade: {age}
+                  Selecione sua idade: <span className='text-2xl bg-purple-400 px-2 py-1 rounded-lg'>{age}</span>
                 </h1>
                 <p className="mt-4 text-sm text-gray-300 leading-relaxed">
                   Sua indicação será com base em sua classificação indicativa
@@ -68,24 +68,31 @@ export default function Filter() {
 
               <div className='mt-4'>
                 <h1 className="mb-2 text-white text-xl font-bold leading-tight">
-                  Selecione a duração: {duration}
+                  Selecione a duração: <span className='text-2xl bg-purple-400 px-2 py-1 rounded-lg'>{duration}</span>
                 </h1>
                 <p className="mt-1 text-sm text-gray-300 leading-relaxed">
-                  Duração em {selectedOption === 'Filme' ? ' minutos' : ' temporadas'}
+                  Duração em <span className='bg-orange-400 px-2 py-1 rounded-lg text-white'>{selectedOption === 'Filme' ? ' minutos' : ' temporadas'}</span>
                 </p>
                 <RangeSlider>
                   
                 </RangeSlider>
               </div>
 
-              <div className='mt-4'>
-                <h1 className="mb-2 text-white text-xl font-semibold leading-tight">
-                  Selecione o ano de lançamento: {year}
+              <div className='mt-4 text-white flex items-center'>
+                <h1 className="text-white text-xl font-semibold leading-tight">
+                  Selecione o ano de lançamento: 
                 </h1>
-                <p className="mt-1 text-sm text-gray-300 leading-relaxed">
-                  A busca será feita por filmes lançados a partir desse ano
-                </p>
+                <div className='flex items-center justify-center px-2'>
+                  <span className='text-2xl bg-purple-400 px-2 py-1 rounded-lg'>{year}</span>
+                </div>
+                <div className='flex items-center justify-center md:pl-20'>
+                  <input type="date" className='rounded-lg text-purple-400'/>
+                </div>
               </div>
+              <p className="flex mt-1 text-sm text-gray-300 leading-relaxed">
+                A busca será feita por filmes lançados a partir desse ano
+              </p>
+
             </div>
 
             <div className='invisible md:visible xl:px-32 lg:px-24'>
