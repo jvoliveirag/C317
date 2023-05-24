@@ -124,9 +124,10 @@ export default function Recommendation(props: RecommendationProps) {
 
               <div className='mt-8 flex items-center justify-center gap-4'>
                 <div className='flex justify-center md:relative'>
-                  <Link href="/recommendation"><button 
+                  <Link href="/recommendation"><button
                         className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                         type="submit"
+                        id="redo-button"
                       >
                         <FaRedo/>
                     </button>
@@ -137,6 +138,7 @@ export default function Recommendation(props: RecommendationProps) {
                   <Link href="/"><button 
                         className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                         type="submit"
+                        id="home-button"
                       >
                         <FaHome/>
                     </button>
@@ -147,6 +149,7 @@ export default function Recommendation(props: RecommendationProps) {
                   <Link href={userLogged ? '#' : '/login'}><button 
                         className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                         type="submit"
+                        id='save-button'
                       >
                         <FaBookmark/>
                     </button>
@@ -157,6 +160,7 @@ export default function Recommendation(props: RecommendationProps) {
                   <Link href="/filters"><button 
                         className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                         type="submit"
+                        id="previous-button"
                       >
                         <FaArrowLeft/>
                     </button>
