@@ -1,6 +1,6 @@
 const APP_LINK = 'https://pickme-vert.vercel.app'  //link da aplicacao em prod
 const DEV_LINK = 'http://localhost:3000'           //link ambiente dev
-const TEST_LINK = DEV_LINK                         //colocar o link do ambiente que deseja testar
+const TEST_LINK = APP_LINK                         //colocar o link do ambiente que deseja testar
 
 describe('Teste dos botões da tela de início', () => {
   beforeEach(() => {
