@@ -114,3 +114,30 @@ describe('Página de filtros', () => {
     cy.get('@yearSelector').should('have.value', '2020'); 
   });
 });
+
+describe('Teste da barra de navegação', () => {
+  beforeEach(() => {
+    cy.visit(TEST_LINK); 
+  });
+  
+  it('Perfil: deve redirecionar para o perfil do usuário', () => {
+    cy.get('[id="navbar-solid-bg"]').contains('Perfil').click();
+    cy.url().should('include', '/profile'); // Verifica se a URL redirecionou para o perfil
+  });
+
+  it('Perfil: deve redirecionar para a coleção do usuário', () => {
+    cy.get('[id="navbar-solid-bg"]').contains('Coleção').click();
+    cy.url().should('include', '/collection'); // Verifica se a URL redirecionou para a coleção
+  });
+
+  it('Perfil: (por hora) não deve redirecionar o usuário (#)', () => {
+    cy.get('[id="navbar-solid-bg"]').contains('Ajuda').click();
+    cy.url().should('include', '#'); 
+  });
+
+  it('Perfil: (por hora) não deve redirecionar o usuário (#)', () => {
+    cy.get('[id="navbar-solid-bg"]').contains('Contato').click();
+    cy.url().should('include', '#'); 
+  });
+
+});
