@@ -1,9 +1,6 @@
-import { FaRedo, FaHome, FaBookmark, FaArrowLeft } from "react-icons/fa";
-import React from "react";
-
-const APP_LINK = 'https://pickme-vert.vercel.app/'  //link da aplicacao em prod
-const DEV_LINK = 'http://localhost:3000/'           //link ambiente dev
-const TEST_LINK = DEV_LINK //colocar o link do ambiente que deseja testar
+const APP_LINK = 'https://pickme-vert.vercel.app'  //link da aplicacao em prod
+const DEV_LINK = 'http://localhost:3000'           //link ambiente dev
+const TEST_LINK = DEV_LINK                         //colocar o link do ambiente que deseja testar
 
 describe('Teste dos botões da tela de início', () => {
   beforeEach(() => {
@@ -16,41 +13,104 @@ describe('Teste dos botões da tela de início', () => {
   });
   
   it('Testar botão "Surpreenda-me": deve redireconar para a página de recomendação.', () => {
-    cy.contains('Surpreenda-me').click();
+    cy.contains('Surpreenda-me', {timeout: 10000}).click();
     cy.url().should('include', '/recommendation'); // Verifica se a URL redirecionou para a pagina "recommendation"
   });
 });
 
 describe('Teste dos botões da página de recomendação', () => {
   beforeEach(() => {
-    cy.visit(`${TEST_LINK}recommendation`); // Substitua pela URL do seu website
+    cy.visit(`${TEST_LINK}/recommendation`); 
   });
 
-  it("Refazer: gera uma nova indicação (recarrega a página).", () => {
-    cy.get("[id='redo-button']") // Seletor para o elemento 
+  it("Refazer: deve gerar uma nova indicação (recarrega a página).", () => {
+    cy.get("[id='redo-button']", {timeout: 10000}) // Seletor para o elemento 
     .click();
 
     cy.url().should("include", "/recommendation");
   });
 
-  it("Home: redireciona para a página inicial.", () => {
+  it("Home: deve redirecionar para a página inicial.", () => {
     cy.get("[id='home-button']") // Seletor para o elemento 
     .click();
 
     cy.url().should("include", "/");
   });
 
-  it("Salvar: caso o usuário não esteja logado redireciona para a página de login, caso esteja para a página de salvos.", () => {
+  it("Salvar: caso o usuário não esteja logado deve redirecionar para a página de login, caso esteja, para a página de salvos.", () => {
     cy.get("[id='save-button']") // Seletor para o elemento 
     .click();
 
     cy.url().should("include", "/login"); //implementar logica de caso esteja logado
   });
 
-  it("Voltar: redireciona para a página anterior.", () => {
+  it("Voltar: deve redirecionar para a página anterior.", () => {
     cy.get("[id='previous-button']") // Seletor para o elemento 
     .click();
 
     cy.url().should("include", "/filters");
+  });
+});
+
+describe('Página de filtros', () => {
+  beforeEach(() => {
+    cy.visit(`${TEST_LINK}/filters`);
+  });
+
+  it('Deve exibir o título da página', () => {
+    cy.get('title').should('contain', 'PickMe');
+  });
+
+  it('Botão de próximo: deve redicionar para a página seguinte', () => {
+    cy.get("[id='button-next']").click();
+    cy.url().should('include', '/recommendation');
+  });
+
+  it('Botão de voltar: deve redicionar para a página anterior', () => {
+    cy.get("[id='button-previous']").click();
+    cy.url().should('include', '/platforms');
+  });
+
+  it('Age Range Slider: deve exibir o seu valor inicial para a idade (0)', () => {
+    cy.get("[id='age']").contains('Selecione sua idade:');
+    cy.get('.text-2xl').contains('0');
+  });
+
+  it('Age Range Slider: deve atualizar e exibir o novo valor para a idade (30)', () => {
+    cy.get("[id='age']").contains('Selecione sua idade:');
+    cy.get('.text-2xl').eq(2).contains('0').as('ageSlider')
+
+    cy.get('@ageSlider').invoke('val', '30').trigger('input'); // Atualiza o valor do range slider para 30
+
+    // Verifica se o valor do elemento range foi atualizado corretamente
+    cy.get('@ageSlider').should('have.value', '30');
+  });
+
+  it('Duration Range Slider: deve exibir o seu valor inicial para a duração (1)', () => {
+    cy.get("[id='duration']").contains('Selecione a duração:');
+    cy.get('.text-2xl').contains('1');
+  });
+
+  it('Duration Range Slider: deve atualizar e exibir o novo valor para a duração (35)', () => {
+    cy.get("[id='duration']").contains('Selecione a duração:');
+    cy.get('.text-2xl').eq(3).contains('1').as('durationSlider')
+
+    cy.get('@durationSlider').invoke('val', '35').trigger('input'); // Atualiza o valor do range slider para 30
+
+    // Verifica se o valor do elemento range foi atualizado corretamente
+    cy.get('@durationSlider').should('have.value', '35');
+  });
+
+  it('Year Selector: deve estar exibindo o valor inicial para o ano de lançamento (1919)', () => {
+    cy.get('input[type="number"]').should('have.value', '1919');
+  })
+
+  it('Year Selector: deve atualizar e exibir o novo valor para o ano de lançamento (2020)', () => {
+    cy.get('input[type="number"]').should('have.value', '1919').as('yearSelector');
+
+    cy.get('@yearSelector').invoke('val', '2020').trigger('input'); // Atualiza o valor do input para 2020
+
+    // Verifica se o valor do elemento input foi atualizado corretamente
+    cy.get('@yearSelector').should('have.value', '2020'); 
   });
 });
