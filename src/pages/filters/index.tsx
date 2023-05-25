@@ -57,7 +57,7 @@ export default function Filter() {
 
           <div className="flex items-center justify-center">
 
-            <div className='invisible md:visible xl:px-32 lg:px-24'>
+            <div id='button-previous' className='invisible md:visible xl:px-32 lg:px-24'>
               <ButtonPrevious path="/platforms"/>
             </div>
 
@@ -71,7 +71,7 @@ export default function Filter() {
                 </div>
               </div>
 
-              <div className='mt-8'>
+              <div id='age' className='mt-8'>
                 <h1 className="mb-2 text-white text-xl font-semibold leading-tight">
                   Selecione sua idade: <span className='text-2xl bg-purple-400 px-2 py-1 rounded-lg'>{ageSliderValue}</span>
                 </h1>
@@ -83,7 +83,7 @@ export default function Filter() {
 
               </div>
 
-              <div className='mt-4'>
+              <div id='duration' className='mt-4'>
                 <h1 className="mb-2 text-white text-xl font-bold leading-tight">
                   Selecione a duração: <span className='text-2xl bg-purple-400 px-2 py-1 rounded-lg'>{durationSliderValue}</span>
                 </h1>
@@ -95,7 +95,7 @@ export default function Filter() {
 
               </div>
 
-              <div className='mt-4 text-white flex items-center'>
+              <div id='year' className='mt-4 text-white flex items-center'>
                 <h1 className="text-white text-xl font-semibold leading-tight">
                   Selecione o ano de lançamento: 
                 </h1>
@@ -112,7 +112,7 @@ export default function Filter() {
 
             </div>
 
-            <div className='invisible md:visible xl:px-32 lg:px-24'>
+            <div id='button-next' className='invisible md:visible xl:px-32 lg:px-24'>
               <ButtonNext path="/recommendation"/>
             </div>
 
