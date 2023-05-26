@@ -24,7 +24,7 @@
 
 You can run the application by clicking <b><u><a href='https://pickme-vert.vercel.app/'>here</a></u></b>.
 
-<img align='center' src="./src/assets/logo.png" width="350">
+<img align='center' src="./frontend/src/assets/logo.png" width="350">
 
 </div>
 
