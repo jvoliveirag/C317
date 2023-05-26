@@ -17,13 +17,15 @@ jobs:
       - name: Change to 'frontend' directory
         run: cd frontend
 
+      - name: Show current directory (after changing)
+        run: pwd
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "14.x"
 
       - name: Install dependencies
-        run: cd frontend
         run: npm install
 
         # and run all Cypress tests
