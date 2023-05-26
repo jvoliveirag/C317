@@ -71,14 +71,14 @@ Here are some features of PickMe:
 - <h3 id="back" align="left">Back-end 🧮</h3>
 
   - <a>Python</a>
-  - <a>AWS Lambda</a>
+  - <a id='aws'>AWS Lambda</a>
   - <a>API</a>
 
 - <h3 id='tests' align='left'>Tests 🧪</h3>
 
-  - <a id='jest'>Jest</a>
-  - <a id='cypress'>Cypress</a>
-  - <a id='postman'>Postman</a>
+  - <a id='jest'><b><u>Jest</u></b></a>: unit testing. please refer to the frontend <a href='https://github.com/jvoliveirag/C317/blob/main/frontend/README.md#tests'>docs</a> to see it runs.
+  - <a id='cypress'><b><u>Cypress</u></b></a>: used to test the interface of the app. please refer to the frontend <a href='https://github.com/jvoliveirag/C317/blob/main/frontend/README.md#tests'>docs</a> to see it runs.
+  - <a id='postman'><b><u>Postman</u></b></a>: used to test the API created in the backend. If you would like to try it you can click <a href=''>here</a> to go directly to the postman page, or you can download the .JSON file <a href='https://github.com/jvoliveirag/C317/blob/main/docs/postman/PickMe.postman_collection.json'>here</a> to run by yourself.
 
 <h2 id='howto' align='left'>How to use 👨‍💻</h2>
 
