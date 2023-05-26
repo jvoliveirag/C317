@@ -23,6 +23,7 @@ jobs:
           node-version: "14.x"
 
       - name: Install dependencies
+        run: cd frontend
         run: npm install
 
         # and run all Cypress tests
