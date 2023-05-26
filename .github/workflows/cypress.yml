@@ -35,9 +35,7 @@ jobs:
 
       - name: Cypress run
         # Uses the official Cypress GitHub action https://github.com/cypress-io/github-action
-        uses: |
-          cd frontend
-          cypress-io/github-action@v5.8.0
+        uses: cypress-io/github-action@v5.8.0
         with:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
