@@ -1,0 +1,3227 @@
+{
+	"info": {
+		"_postman_id": "8cc7d716-3ac3-4d9b-ae29-4ac32968f4b0",
+		"name": "PickMe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24265957"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "GET - 200",
+					"item": [
+						{
+							"name": "Buscar um filme na Netflix",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Plataforma correta\", () => {\r",
+											"pm.expect(pm.response.json().plataform).to.eql(\"Netflix\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}?dbId=PMN2",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "dbId",
+											"value": "PMN2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar um filme na Disney+",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Plataforma correta\", () => {\r",
+											"pm.expect(pm.response.json().plataform).to.eql(\"Disney\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}?dbId=PMD25",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "dbId",
+											"value": "PMD25"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar um filme na Amazon Prime",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Plataforma correta\", () => {\r",
+											"pm.expect(pm.response.json().plataform).to.eql(\"AmazonPrime\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}?dbId=PMAP87",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "dbId",
+											"value": "PMAP87"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Buscar um filme na HBO",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Plataforma correta\", () => {\r",
+											"pm.expect(pm.response.json().plataform).to.eql(\"HBO\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}?dbId=PMH108",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "dbId",
+											"value": "PMH108"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response has Body\", function () {",
+									"    pm.response.to.be.withBody;",
+									"});",
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "GET - 404",
+					"item": [
+						{
+							"name": "id_forced max",
+							"item": [
+								{
+									"name": "Buscar um filme invalido na Netflix",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMN8809",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMN8809"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na Disney+",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMD1451",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMD1451"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na Amazon Prime",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMAP9674",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMAP9674"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na HBO",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMH3294",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMH3294"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "id_forced min",
+							"item": [
+								{
+									"name": "Buscar um filme invalido na Netflix",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMN0",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMN0"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na Disney+",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMD0",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMD0"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na Amazon Prime",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMAP0",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMAP0"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na HBO",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMH0",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMH0"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "id_forced invalido",
+							"item": [
+								{
+									"name": "Buscar um filme invalido na Netflix",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMN08",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMN08"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na Disney+",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMD02",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMD02"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na Amazon Prime",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMAP01",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMAP01"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme invalido na HBO",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMH05",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMH05"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Plataforma invalida",
+							"item": [
+								{
+									"name": "Buscar um filme em uma plataforma invalida",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=PMA55",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": "PMA55"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Parametro sem valor",
+							"item": [
+								{
+									"name": "Buscar um filme com valor de parametro vazio",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url}}?dbId=",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "dbId",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Mensagem de erro correta\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Tente um codigo valido\");",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "GET - 500",
+					"item": [
+						{
+							"name": "Buscar um filme sem escrever o parametro",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}?",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Mensagem correta\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.message).to.eql(\"Internal Server Error\");",
+									"});"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GET - Atualização",
+			"item": [
+				{
+					"name": "GET - 200",
+					"item": [
+						{
+							"name": "Filme - Movie",
+							"item": [
+								{
+									"name": "Parametros completos",
+									"item": [
+										{
+											"name": "Buscar um filme com os parametros validos",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Buscar um Filme\", () => {\r",
+															"  const responseJson = pm.response.json();\r",
+															"  pm.expect(responseJson.plataform).to.eql(\"Disney\");\r",
+															"  pm.expect(responseJson.type).to.eql(\"Movie\");\r",
+															"  pm.expect(responseJson.adult).to.eql(false);\r",
+															"  pm.expect(responseJson.duration).to.be.below(101);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Drama&movie_or_series=Movie&year=2000&time_to_spend=100&platforms=Disney",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Drama"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Disney"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Idade",
+									"item": [
+										{
+											"name": "Buscar um filme para usuario menor de idade",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"userAge\", 15);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"var idade = pm.collectionVariables.get(\"userAge\");\r",
+															"pm.test(\"Menor de idade comprovado\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(idade).to.be.below(18);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Filme nao adulto\", () => {\r",
+															"  const responseJson = pm.response.json();\r",
+															"  pm.expect(responseJson.adult).to.eql(false);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age={{userAge}}&genre=Comedy&movie_or_series=Movie&year=2000&time_to_spend=100&platforms=HBO",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "{{userAge}}"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "HBO"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Genero",
+									"item": [
+										{
+											"name": "Buscar um filme com genero valido para assistir",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"movieGenreFav\", \"Romance\");"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Genero valido\", () => {\r",
+															"    pm.expect(pm.collectionVariables.get(\"movieGenreFav\")).to.be.oneOf([\"Action-Adventure\",\"Comedy\",\"Drama\",\"Horror\",\"Romance\",\"Science Fiction\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre={{movieGenreFav}}&movie_or_series=Movie&year=2000&time_to_spend=100&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "{{movieGenreFav}}"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar um filme com o genero escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"movieGenreFav\", \"Comedy\");"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Genero principal encontrado\", () => {\r",
+															" const responseJson = pm.response.json();\r",
+															" pm.expect(responseJson.listed_in).to.include(pm.collectionVariables.get(\"movieGenreFav\"));\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre={{movieGenreFav}}&movie_or_series=Movie&year=2002&time_to_spend=100&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "{{movieGenreFav}}"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2002"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar um filme com mais de um genero escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Genero encontrado\", () => {\r",
+															" const responseJson = pm.response.json();\r",
+															" pm.expect(responseJson.listed_in).to.contain.oneOf([\"Comedy\",\"Romance\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Comedy, Romance&movie_or_series=Movie&year=2002&time_to_spend=100&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy, Romance"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2002"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Tempo",
+									"item": [
+										{
+											"name": "Buscar um filme com tempo de duração valido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Tempo de duracao valido\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(responseJson.duration).to.be.below(602);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=28&genre=Romance&movie_or_series=Movie&year=2000&time_to_spend=95&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "28"
+														},
+														{
+															"key": "genre",
+															"value": "Romance"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "95"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar um filme com tempo de duração escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"movieTime\", 95);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"var tempo = pm.collectionVariables.get(\"movieTime\");\r",
+															"pm.test(\"Tempo de duracao ate \" + tempo + \"min\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    if(tempo == 1){\r",
+															"        pm.expect(responseJson.duration).to.be.eql(tempo);\r",
+															"    }\r",
+															"    if(tempo > 1){\r",
+															"        pm.expect(responseJson.duration).to.be.below(tempo);\r",
+															"    }\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=28&genre=Romance&movie_or_series=Movie&year=2000&time_to_spend={{movieTime}}&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "28"
+														},
+														{
+															"key": "genre",
+															"value": "Romance"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "{{movieTime}}"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Plataforma",
+									"item": [
+										{
+											"name": "Buscar um filme com mais de uma plataforma selecionada",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Plataforma encontrada\", () => {\r",
+															" const responseJson = pm.response.json();\r",
+															" pm.expect(responseJson.plataform).to.contain.oneOf([\"Disney\",\"HBO\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Comedy&movie_or_series=Movie&year=2008&time_to_spend=100&platforms=Disney, HBO",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2008"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Disney, HBO"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar um filme na plataforma valida",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"plataforma\", \"HBO\");\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Plataforma valida\", () => {\r",
+															"    pm.expect(pm.collectionVariables.get(\"plataforma\")).to.be.oneOf([\"AmazonPrime\", \"Disney+\", \"Netflix\", \"HBO\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Comedy&movie_or_series=Movie&year=2005&time_to_spend=100&platforms={{plataforma}}",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2005"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "{{plataforma}}"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar um filme na plataforma escolhida",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"plataforma\", \"HBO\");\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Plataforma correta\", () => {\r",
+															"pm.expect(pm.response.json().plataform).to.eql(pm.collectionVariables.get(\"plataforma\"));\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=35&genre=Drama&movie_or_series=Movie&year=2005&time_to_spend=100&platforms={{plataforma}}",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "35"
+														},
+														{
+															"key": "genre",
+															"value": "Drama"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "2005"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "{{plataforma}}"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Ano",
+									"item": [
+										{
+											"name": "Buscar um filme com o ano de lançamento escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"year\", 2008);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Ano de lançamento escolhido\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(responseJson.release_year).to.be.above(pm.collectionVariables.get(\"year\") - 1);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}?age=12&genre=Comedy&movie_or_series=Movie&year={{year}}&time_to_spend=100&platforms=Disney",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "12"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "{{year}}"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Disney"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar um filme com o ano de lançamento valido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"year\", 2008);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Ano de lançamento escolhido\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(responseJson.release_year).to.be.above(1918);\r",
+															"    pm.expect(responseJson.release_year).to.be.below(2023);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}?age=25&genre=Comedy&movie_or_series=Movie&year={{year}}&time_to_spend=100&platforms=AmazonPrime",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "25"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "Movie"
+														},
+														{
+															"key": "year",
+															"value": "{{year}}"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "AmazonPrime"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Ano de lançamento válido\", function () {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.release_year).to.be.below(2023);",
+													"});"
+												]
+											}
+										}
+									]
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Buscar um Filme\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.type).to.eql(\"Movie\");",
+											"});"
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Serie - TV Show",
+							"item": [
+								{
+									"name": "Parametros completos",
+									"item": [
+										{
+											"name": "Buscar uma serie com os parametros validos",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Buscar uma Série\", () => {\r",
+															"  const responseJson = pm.response.json();\r",
+															"  pm.expect(responseJson.plataform).to.eql(\"Disney\");\r",
+															"  pm.expect(responseJson.type).to.eql(\"TV Show\");\r",
+															"  pm.expect(responseJson.adult).to.eql(false);\r",
+															"  pm.expect(responseJson.duration).to.be.below(2);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Drama&movie_or_series=TV Show&year=2000&time_to_spend=1&platforms=Disney",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Drama"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "1"
+														},
+														{
+															"key": "platforms",
+															"value": "Disney"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Idade",
+									"item": [
+										{
+											"name": "Buscar uma serie para usuario menor de idade",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"var idade = pm.collectionVariables.get(\"userAge\");\r",
+															"pm.test(\"Menor de idade comprovado\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(idade).to.be.below(18);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Serie nao adulta\", () => {\r",
+															"  const responseJson = pm.response.json();\r",
+															"  pm.expect(responseJson.adult).to.eql(false);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age={{userAge}}&genre=Comedy&movie_or_series=TV Show&year=2000&time_to_spend=1&platforms=HBO",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "{{userAge}}"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "1"
+														},
+														{
+															"key": "platforms",
+															"value": "HBO"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Genero",
+									"item": [
+										{
+											"name": "Buscar uma serie com genero valido para assistir",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"movieGenreFav\", \"Romance\");"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Genero valido\", () => {\r",
+															"    pm.expect(pm.collectionVariables.get(\"movieGenreFav\")).to.be.oneOf([\"Action-Adventure\",\"Comedy\",\"Drama\",\"Horror\",\"Romance\",\"Science Fiction\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre={{movieGenreFav}}&movie_or_series=TV Show&year=2000&time_to_spend=1&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "{{movieGenreFav}}"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "1"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar uma serie com genero escolhido para assistir",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"movieGenreFav\", \"Comedy\");"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Genero principal encontrado\", () => {\r",
+															" const responseJson = pm.response.json();\r",
+															" pm.expect(responseJson.listed_in).to.include(pm.collectionVariables.get(\"movieGenreFav\"));\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre={{movieGenreFav}}&movie_or_series=TV Show&year=2002&time_to_spend=2&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "{{movieGenreFav}}"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2002"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "2"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar uma serie com mais de um genero escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Genero encontrado\", () => {\r",
+															" const responseJson = pm.response.json();\r",
+															" pm.expect(responseJson.listed_in).to.contain.oneOf([\"Comedy\",\"Romance\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Comedy, Romance&movie_or_series=TV Show&year=2002&time_to_spend=3&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy, Romance"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2002"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "3"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Tempo",
+									"item": [
+										{
+											"name": "Buscar uma serie com tempo de duração escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"movieTime\", 2);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"var tempo = pm.collectionVariables.get(\"movieTime\");\r",
+															"pm.test(\"Numero de temporadas: \" + tempo, function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    if(tempo == 1){\r",
+															"        pm.expect(responseJson.duration).to.be.eql(tempo);\r",
+															"    }\r",
+															"    if(tempo > 1){\r",
+															"        pm.expect(responseJson.duration).to.be.below(tempo);\r",
+															"    }\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=28&genre=Romance&movie_or_series=TV Show&year=2000&time_to_spend={{movieTime}}&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "28"
+														},
+														{
+															"key": "genre",
+															"value": "Romance"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "{{movieTime}}"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar uma serie com tempo de duração valido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Numero de temporadas valido\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(responseJson.duration).to.be.below(91);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=28&genre=Romance&movie_or_series=TV Show&year=2000&time_to_spend=2&platforms=Netflix",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "28"
+														},
+														{
+															"key": "genre",
+															"value": "Romance"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2000"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "2"
+														},
+														{
+															"key": "platforms",
+															"value": "Netflix"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Ano",
+									"item": [
+										{
+											"name": "Buscar uma serie com o ano de lançamento escolhido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"year\", 2008);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Ano de lançamento escolhido\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(responseJson.release_year).to.be.above(pm.collectionVariables.get(\"year\") - 1);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}?age=12&genre=Comedy&movie_or_series=TV Show&year={{year}}&time_to_spend=100&platforms=Disney",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "12"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "{{year}}"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "Disney"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar uma serie com o ano de lançamento valido",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"year\", 2008);"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Ano de lançamento escolhido\", function () {\r",
+															"    const responseJson = pm.response.json();\r",
+															"    pm.expect(responseJson.release_year).to.be.above(1918);\r",
+															"    pm.expect(responseJson.release_year).to.be.below(2023);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{url}}?age=25&genre=Comedy&movie_or_series=TV Show&year={{year}}&time_to_spend=100&platforms=AmazonPrime",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "25"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "{{year}}"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "AmazonPrime"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Ano de lançamento válido\", function () {",
+													"    const responseJson = pm.response.json();",
+													"    pm.expect(responseJson.release_year).to.be.below(2023);",
+													"});"
+												]
+											}
+										}
+									]
+								},
+								{
+									"name": "Plataforma",
+									"item": [
+										{
+											"name": "Buscar uma serie com mais de uma plataforma selecionada",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Plataforma encontrada\", () => {\r",
+															" const responseJson = pm.response.json();\r",
+															" pm.expect(responseJson.plataform).to.contain.oneOf([\"Disney\",\"HBO\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Comedy&movie_or_series=TV Show&year=2008&time_to_spend=2&platforms=Disney, HBO",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2008"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "2"
+														},
+														{
+															"key": "platforms",
+															"value": "Disney, HBO"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar uma serie na plataforma valida",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"plataforma\", \"HBO\");"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Plataforma valida\", () => {\r",
+															"    pm.expect(pm.collectionVariables.get(\"plataforma\")).to.be.oneOf([\"AmazonPrime\", \"Disney+\", \"Netflix\", \"HBO\"]);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=30&genre=Comedy&movie_or_series=TV Show&year=2005&time_to_spend=100&platforms={{plataforma}}",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "30"
+														},
+														{
+															"key": "genre",
+															"value": "Comedy"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2005"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "{{plataforma}}"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Buscar uma serie na plataforma escolhida",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"pm.collectionVariables.set(\"plataforma\", \"HBO\");"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Plataforma correta\", () => {\r",
+															"pm.expect(pm.response.json().plataform).to.eql(pm.collectionVariables.get(\"plataforma\"));\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}?age=35&genre=Drama&movie_or_series=TV Show&year=2005&time_to_spend=100&platforms={{plataforma}}",
+													"host": [
+														"{{url}}"
+													],
+													"query": [
+														{
+															"key": "age",
+															"value": "35"
+														},
+														{
+															"key": "genre",
+															"value": "Drama"
+														},
+														{
+															"key": "movie_or_series",
+															"value": "TV Show"
+														},
+														{
+															"key": "year",
+															"value": "2005"
+														},
+														{
+															"key": "time_to_spend",
+															"value": "100"
+														},
+														{
+															"key": "platforms",
+															"value": "{{plataforma}}"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							],
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"pm.test(\"Buscar uma Serie\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson.type).to.eql(\"TV Show\");",
+											"});"
+										]
+									}
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response has Body\", function () {",
+									"    pm.response.to.be.withBody;",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 4000ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(4000);",
+									"});",
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "GET - 400",
+					"item": [
+						{
+							"name": "Buscar filme sem responder uma pergunta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}?genre=Romance&movie_or_series=Movie&year=2000&time_to_spend=100&platforms=HBO",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "age",
+											"value": "25",
+											"disabled": true
+										},
+										{
+											"key": "genre",
+											"value": "Romance"
+										},
+										{
+											"key": "movie_or_series",
+											"value": "Movie"
+										},
+										{
+											"key": "year",
+											"value": "2000"
+										},
+										{
+											"key": "time_to_spend",
+											"value": "100"
+										},
+										{
+											"key": "platforms",
+											"value": "HBO"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});",
+									"",
+									"pm.test(\"Mensagem de erro correta\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Requisicao com parametros invalidos ou incompletos\");",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "GET - 404",
+					"item": [
+						{
+							"name": "Parametros completos",
+							"item": [
+								{
+									"name": "Filme nao encontrado com os parametros fornecidos",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}?age=25&genre=Romance&movie_or_series=Movie&year=2000&time_to_spend=50&platforms=HBO",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "age",
+													"value": "25"
+												},
+												{
+													"key": "genre",
+													"value": "Romance"
+												},
+												{
+													"key": "movie_or_series",
+													"value": "Movie"
+												},
+												{
+													"key": "year",
+													"value": "2000"
+												},
+												{
+													"key": "time_to_spend",
+													"value": "50"
+												},
+												{
+													"key": "platforms",
+													"value": "HBO"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Genero",
+							"item": [
+								{
+									"name": "Buscar um filme com genero escrito errado",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}?age=25&genre=Romancen&movie_or_series=Movie&year=2000&time_to_spend=100&platforms=HBO",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "age",
+													"value": "25"
+												},
+												{
+													"key": "genre",
+													"value": "Romancen"
+												},
+												{
+													"key": "movie_or_series",
+													"value": "Movie"
+												},
+												{
+													"key": "year",
+													"value": "2000"
+												},
+												{
+													"key": "time_to_spend",
+													"value": "100"
+												},
+												{
+													"key": "platforms",
+													"value": "HBO"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tempo",
+							"item": [
+								{
+									"name": "Buscar um filme com tempo de duração inferior ao limite",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}?age=25&genre=Romance&movie_or_series=Movie&year=2000&time_to_spend=0&platforms=Netflix",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "age",
+													"value": "25"
+												},
+												{
+													"key": "genre",
+													"value": "Romance"
+												},
+												{
+													"key": "movie_or_series",
+													"value": "Movie"
+												},
+												{
+													"key": "year",
+													"value": "2000"
+												},
+												{
+													"key": "time_to_spend",
+													"value": "0"
+												},
+												{
+													"key": "platforms",
+													"value": "Netflix"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Plataforma",
+							"item": [
+								{
+									"name": "Buscar um filme sem responder a pergunta plataforma",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}?age=25&genre=Romance&movie_or_series=Movie&year=2020&time_to_spend=100&platforms= ",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "age",
+													"value": "25"
+												},
+												{
+													"key": "genre",
+													"value": "Romance"
+												},
+												{
+													"key": "movie_or_series",
+													"value": "Movie"
+												},
+												{
+													"key": "year",
+													"value": "2020"
+												},
+												{
+													"key": "time_to_spend",
+													"value": "100"
+												},
+												{
+													"key": "platforms",
+													"value": " "
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Buscar um filme com nome da plataforma errado",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"pm.collectionVariables.set(\"userAge\", 25);\r",
+													"pm.collectionVariables.set(\"movieGenreFav\", \"Romance\");\r",
+													"pm.collectionVariables.set(\"movieGenre\", \"Comedy\");\r",
+													"pm.collectionVariables.set(\"movieTime\", 100);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"age\": {{userAge}},\r\n  \"genre_fav\": \"{{movieGenreFav}}\",\r\n  \"movie_or_series\": [\"Movie\"],\r\n  \"genre_to_watch\": \"{{movieGenre}}\",\r\n  \"time_to_spend\": {{movieTime}},\r\n  \"platforms\": [\"\"]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}?age=25&genre=Romance&movie_or_series=Movie&year=2020&time_to_spend=100&platforms=Netflis",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "age",
+													"value": "25"
+												},
+												{
+													"key": "genre",
+													"value": "Romance"
+												},
+												{
+													"key": "movie_or_series",
+													"value": "Movie"
+												},
+												{
+													"key": "year",
+													"value": "2020"
+												},
+												{
+													"key": "time_to_spend",
+													"value": "100"
+												},
+												{
+													"key": "platforms",
+													"value": "Netflis"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Ano",
+							"item": [
+								{
+									"name": "Buscar um filme com ano de lançamento superior ao limite",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}?age=25&genre=Romance&movie_or_series=Movie&year=2023&time_to_spend=100&platforms=Netflix",
+											"host": [
+												"{{url}}"
+											],
+											"query": [
+												{
+													"key": "age",
+													"value": "25"
+												},
+												{
+													"key": "genre",
+													"value": "Romance"
+												},
+												{
+													"key": "movie_or_series",
+													"value": "Movie"
+												},
+												{
+													"key": "year",
+													"value": "2023"
+												},
+												{
+													"key": "time_to_spend",
+													"value": "100"
+												},
+												{
+													"key": "platforms",
+													"value": "Netflix"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});",
+									"",
+									"pm.test(\"Mensagem de erro correta\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Nenhum filme encontrado\");",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "GET - 500",
+					"item": [
+						{
+							"name": "Buscar um filme sem responder as perguntas",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}",
+									"host": [
+										"{{url}}"
+									],
+									"query": [
+										{
+											"key": "age",
+											"value": "25",
+											"disabled": true
+										},
+										{
+											"key": "genre",
+											"value": "Romance",
+											"disabled": true
+										},
+										{
+											"key": "movie_or_series",
+											"value": "Movie",
+											"disabled": true
+										},
+										{
+											"key": "year",
+											"value": "2000",
+											"disabled": true
+										},
+										{
+											"key": "time_to_spend",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "platforms",
+											"value": "Netflix",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});",
+									"",
+									"pm.test(\"Mensagem correta\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.message).to.eql(\"Internal Server Error\");",
+									"});"
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe"
+		},
+		{
+			"key": "movieGenreFav",
+			"value": ""
+		},
+		{
+			"key": "userAge",
+			"value": ""
+		},
+		{
+			"key": "movieTime",
+			"value": ""
+		},
+		{
+			"key": "plataforma",
+			"value": ""
+		},
+		{
+			"key": "year",
+			"value": "2008"
+		},
+		{
+			"key": "genre",
+			"value": ""
+		},
+		{
+			"key": "movieGenre",
+			"value": ""
+		}
+	]
+}
