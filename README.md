@@ -58,7 +58,9 @@ Here are some features of PickMe:
 
 <h2 id="dev" align="left">Development ⚙️</h2>
 
-- <h3 id="front" align="left">Front-end 💻</h3>
+<u><b>Obs.</b></u>: To see details like requirements, setup and install and how to use, please refer to the docs of the respective end by just clicking on their name below.
+
+- <h3 id="front" align="left"><a href='https://github.com/jvoliveirag/C317/blob/main/frontend/README.md'>Front-end</a> 💻</h3>
 
   - <a id='TS'><b><u>TypeScript</u></b>: allows type verification;</a>
   - <a id='react'><b><u>React</u></b>: hooks and components;</a>
@@ -68,7 +70,7 @@ Here are some features of PickMe:
 
   With these we could built an application which is <b>responsive</b>, <b>simple</b>, <b>clean</b> and <b>efficient</b>;
 
-- <h3 id="back" align="left">Back-end 🧮</h3>
+- <h3 id="back" align="left"><a href='https://github.com/jvoliveirag/C317/blob/main/backend/README.md'>Back-end</a> 🧮</h3>
 
   - <a>Python</a>
   - <a id='aws'>AWS Lambda</a>
