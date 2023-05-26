@@ -29,6 +29,7 @@ jobs:
         # and run all Cy
       - name: Change to 'frontend' directory
         run: |
+          pwd
           cd frontend
           pwd
 
