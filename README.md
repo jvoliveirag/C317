@@ -80,7 +80,7 @@ Here are some features of PickMe:
 
   - <a id='jest'><b><u>Jest</u></b></a>: unit testing. please refer to the frontend <a href='https://github.com/jvoliveirag/C317/blob/main/frontend/README.md#tests'>docs</a> to see it runs.
   - <a id='cypress'><b><u>Cypress</u></b></a>: used to test the interface of the app. please refer to the frontend <a href='https://github.com/jvoliveirag/C317/blob/main/frontend/README.md#tests'>docs</a> to see it runs.
-  - <a id='postman'><b><u>Postman</u></b></a>: used to test the API created in the backend. If you would like to try it you can click <a href=''>here</a> to go directly to the postman page, or you can download the .JSON file <a href='https://github.com/jvoliveirag/C317/blob/main/docs/postman/PickMe.postman_collection.json'>here</a> to run by yourself.
+  - <a id='postman'><b><u>Postman</u></b></a>: used to test the API created in the backend. If you would like to try it you can click <a href='https://www.postman.com/maintenance-meteorologist-79498991/workspace/pickme/collection/20892768-604390df-5568-4262-b72f-9769d89304d0?action=share&creator=20892768'>here</a> to go directly to the postman page, or you can download the .JSON file <a href='https://github.com/jvoliveirag/C317/blob/main/docs/postman/PickMe.postman_collection.json'>here</a> to run by yourself.
 
 <h2 id='howto' align='left'>How to use 👨‍💻</h2>
 
