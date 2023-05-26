@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
         # Install NPM dependencies, cache them correctly
       - name: Change to 'frontend' directory
-        run: cd ./frontend
+        run: cd .\frontend
 
       - name: Show current directory (after changing)
         run: pwd
