@@ -8,7 +8,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/jvoliveirag/C317)
 ![GitHub open issues](https://img.shields.io/github/issues/jvoliveirag/C317)
 ![Vercel](https://vercelbadge.vercel.app/api/jvoliveirag/C317)
-[![PickMe](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/gvyg3t&style=flat&logo=cypress)](https://cloud.cypress.io/projects/gvyg3t/runs)
+[![CypressCI](https://github.com/jvoliveirag/C317/actions/workflows/cypress.yml/badge.svg)](https://github.com/jvoliveirag/C317/actions/workflows/cypress.yml)
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 <a href='#aws'>![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)</a>
