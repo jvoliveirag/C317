@@ -1,13 +1,17 @@
-import React from 'react';
-import SelectOption from '../SelectOption';
+import React from 'react'
+import SelectOption from '../SelectOption'
 
 type SelectProps = {
-  options: string[];
-  selectedValue: string;
-  onSelect: (value: string) => void;
-};
+  options: string[]
+  selectedValue: string
+  onSelect: (value: string) => void
+}
 
-const Select: React.FC<SelectProps> = ({ options, selectedValue, onSelect }) => {
+const Select: React.FC<SelectProps> = ({
+  options,
+  selectedValue,
+  onSelect,
+}) => {
   return (
     <div className="flex space-x-4">
       {options.map((option) => (
@@ -19,7 +23,7 @@ const Select: React.FC<SelectProps> = ({ options, selectedValue, onSelect }) => 
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export { Select };
+export { Select }

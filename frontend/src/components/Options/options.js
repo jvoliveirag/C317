@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from 'react'
 import Image from 'next/image'
-import { useState } from "react";
 
 const Options = ({
   id,
@@ -9,22 +8,28 @@ const Options = ({
   img,
   width,
   height,
-  children
+  children = null || <></>,
 }) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(false)
 
   const handleClick = () => {
-    onChange(!checked);
-    setSelected(!selected);
+    onChange(!checked)
+    setSelected(!selected)
   }
 
   return (
-
-    <div className={`options ${selected ? 'selected bg-white rounded-lg py-3' : 'bg-white rounded-lg opacity-70 hover:opacity-100 py-3'}`} onClick={handleClick}>
+    <div
+      className={`options ${
+        selected
+          ? 'selected bg-white rounded-lg py-3'
+          : 'bg-white rounded-lg opacity-70 hover:opacity-100 py-3'
+      }`}
+      onClick={handleClick}
+    >
       <Image src={img} alt={id} width={width} height={height} />
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Options;
+export default Options

@@ -1,13 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 type SelectOptionProps = {
-  value: string;
-  selectedValue: string;
-  onSelect: (value: string) => void;
-};
+  value: string
+  selectedValue: string
+  onSelect: (value: string) => void
+}
 
-const SelectOption: React.FC<SelectOptionProps> = ({ value, selectedValue, onSelect }) => {
-  const isSelected = value === selectedValue;
+const SelectOption: React.FC<SelectOptionProps> = ({
+  value,
+  selectedValue,
+  onSelect,
+}) => {
+  const isSelected = value === selectedValue
 
   return (
     <div
@@ -18,7 +22,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({ value, selectedValue, onSel
     >
       {value}
     </div>
-  );
-};
+  )
+}
 
-export default SelectOption;
+export default SelectOption
