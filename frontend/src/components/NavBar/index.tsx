@@ -18,7 +18,7 @@ const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
   userLogged ? linkPath[1] : (linkPath[1] = '/login')
   linkPath[2] = HELP_CONTACT
   linkPath[3] = HELP_CONTACT
-  
+
   return (
     <nav className="bg-blue-300 bg-opacity-20 backdrop-filter backdrop-blur-sm">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
