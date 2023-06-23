@@ -107,7 +107,7 @@ export default function Recommendation(props: RecommendationProps) {
   return (
     <>
       <Head>
-        <title>PickMe</title>
+        <title>Pick for me!</title>
       </Head>
 
       <div className="h-screen flex flex-col">

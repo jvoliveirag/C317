@@ -65,7 +65,7 @@ export default function Filter() {
   return (
     <>
       <Head>
-        <title>PickMe</title>
+        <title>Pick for me!</title>
       </Head>
 
       <div className="h-screen flex flex-col">
