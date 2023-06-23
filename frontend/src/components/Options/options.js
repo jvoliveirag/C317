@@ -22,7 +22,7 @@ const Options = ({
       className={`options ${
         selected
           ? 'selected bg-white rounded-lg py-3'
-          : 'bg-white rounded-lg opacity-70 hover:opacity-100 py-3'
+          : 'bg-white rounded-lg py-3'
       }`}
       onClick={handleClick}
     >
