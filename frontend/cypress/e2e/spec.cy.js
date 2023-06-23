@@ -61,7 +61,7 @@ describe('Página de filtros', () => {
   })
 
   it('Deve exibir o título da página', () => {
-    cy.get('title').should('contain', 'PickMe')
+    cy.get('title').should('contain', 'Pick for me!')
   })
 
   it('Botão de próximo: deve redicionar para a página seguinte', () => {
