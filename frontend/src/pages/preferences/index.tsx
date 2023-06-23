@@ -66,7 +66,7 @@ export default function Genre() {
               </h1>
 
               <div className="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6">
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="action"
                     checked={genAction}
@@ -81,7 +81,7 @@ export default function Genre() {
                   </Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="comedy"
                     checked={genComedy}
@@ -96,7 +96,7 @@ export default function Genre() {
                   </Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="drama"
                     checked={genDrana}
@@ -111,7 +111,7 @@ export default function Genre() {
                   </Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="fiction"
                     checked={genFiction}
@@ -126,7 +126,7 @@ export default function Genre() {
                   </Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="horror"
                     checked={genHorror}
@@ -141,7 +141,7 @@ export default function Genre() {
                   </Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="romance"
                     checked={genRomance}

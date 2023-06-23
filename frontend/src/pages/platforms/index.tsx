@@ -57,8 +57,8 @@ export default function Platform() {
                 Selecione seu(s) serviço(s) de streaming
               </h1>
 
-              <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-2">
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+              <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="disney"
                     checked={platDisney}
@@ -69,7 +69,7 @@ export default function Platform() {
                   ></Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="hbo"
                     checked={platHbo}
@@ -80,7 +80,7 @@ export default function Platform() {
                   ></Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="netflix"
                     checked={platNetflix}
@@ -91,7 +91,7 @@ export default function Platform() {
                   ></Options>
                 </label>
 
-                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+                <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
                   <Options
                     id="prime"
                     checked={platPrime}
