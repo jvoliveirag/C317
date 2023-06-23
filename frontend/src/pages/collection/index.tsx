@@ -107,7 +107,7 @@ export default function Collection(props: RecommendationProps) {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center">
             <div className="mb:mt-8 mt-8">
               <div className="collection-card rounded-lg shadow-lg p-3">
@@ -122,19 +122,19 @@ export default function Collection(props: RecommendationProps) {
                 <div className="mt-4 items-center justify-center grid col-start-2 col-end-3 text-purple-400">
                   <p className="text-lg font-semibold">
                     Lançamento:{' '}
-                    <span className="text-lg font-semibold text-orange-400">
+                    <span className="text-lg font-semibold text-orange-600">
                       {props.released}
                     </span>
                   </p>
                   <p className="text-lg font-semibold">
                     Onde assistir:{' '}
-                    <span className="text-lg font-semibold text-orange-400">
+                    <span className="text-lg font-semibold text-orange-600">
                       {props.platforms}
                     </span>
                   </p>
                   <p className="text-lg font-semibold">
                     Duração:{' '}
-                    <span className="text-lg font-semibold text-orange-400">
+                    <span className="text-lg font-semibold text-orange-600">
                       {props.duration} {movie ? ' minutos' : ' temporadas'}
                     </span>
                   </p>
@@ -145,7 +145,7 @@ export default function Collection(props: RecommendationProps) {
                 <div className="flex justify-center md:relative">
                   <Link href="#">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                     >
                       <FaArrowLeft />
@@ -156,7 +156,7 @@ export default function Collection(props: RecommendationProps) {
                 <div className="flex justify-center md:relative">
                   <Link href="/">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                     >
                       <FaHome />
@@ -167,7 +167,7 @@ export default function Collection(props: RecommendationProps) {
                 <div className="flex justify-center md:relative">
                   <Link href={userLogged ? '#' : '/login'}>
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                     >
                       <FaBookmark />
@@ -178,7 +178,7 @@ export default function Collection(props: RecommendationProps) {
                 <div className="flex justify-center md:relative">
                   <Link href="#">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                     >
                       <FaArrowRight />

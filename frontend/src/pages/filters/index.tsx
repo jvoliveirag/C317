@@ -81,7 +81,7 @@ export default function Filter() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center">
             <div
               id="button-previous"
@@ -132,7 +132,7 @@ export default function Filter() {
                 </h1>
                 <p className="mt-1 text-sm text-gray-300 leading-relaxed">
                   Duração em{' '}
-                  <span className="bg-orange-400 px-2 py-1 rounded-lg text-white">
+                  <span className="bg-orange-600 px-2 py-1 rounded-lg text-white">
                     {selectedOption === 'Filme' ? ' minutos' : ' temporadas'}
                   </span>
                 </p>

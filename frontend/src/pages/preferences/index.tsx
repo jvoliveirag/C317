@@ -74,14 +74,14 @@ export default function Genre() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center">
             <div className="invisible md:visible xl:px-32 lg:px-24">
               <ButtonPrevious path="/" />
             </div>
 
             <div className="">
-              <h1 className="text-white text-4xl font-bold leading-tight flex justify-center items-center mt-4">
+              <h1 className="text-white md:text-4xl text-3xl font-bold leading-tight flex justify-center items-center">
                 Gênero que gostaria de assistir
               </h1>
 

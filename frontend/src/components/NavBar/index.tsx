@@ -11,16 +11,18 @@ type NavBarProps = {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
-  const userLogged = true // criar a logica para verificar se o user esta logado
+  const userLogged = false // criar a logica para verificar se o user esta logado
   // eslint-disable-next-line no-unused-expressions
-  userLogged ? linkPath[0] : (linkPath[0] = '/login')
+  userLogged
+    ? (linkPath[0], linkName[0])
+    : ((linkPath[0] = '/login'), (linkName[0] = 'Login'))
   // eslint-disable-next-line no-unused-expressions
-  userLogged ? linkPath[1] : (linkPath[1] = '/login')
+  // userLogged ? linkPath[1] : (linkPath[1] = '/login')
   linkPath[2] = HELP_CONTACT
   linkPath[3] = HELP_CONTACT
 
   return (
-    <nav className="bg-blue-300 bg-opacity-20 backdrop-filter backdrop-blur-sm">
+    <nav className="nav bg-purple-400 bg-opacity-80 backdrop-filter backdrop-blur-sm border-b-2 border-white shadow-2xl shadow-purple-400">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
         <Link href="/" className="flex items-center">
           <Image src={logoImg} height={40} width={40} alt="PickMe Logo" />
@@ -57,15 +59,15 @@ const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
             <li>
               <a
                 href={linkPath[0]}
-                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 {linkName[0]}
               </a>
             </li>
-            <li>
+            <li className={userLogged ? '' : 'hidden'}>
               <a
                 href={linkPath[1]}
-                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 {linkName[1]}
               </a>
@@ -73,7 +75,7 @@ const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
             <li>
               <a
                 href={linkPath[2]}
-                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 {linkName[2]}
               </a>
@@ -81,7 +83,7 @@ const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
             <li>
               <a
                 href={linkPath[3]}
-                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-400 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 md:hover:underline md:hover:underline-offset-8 duration-200 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 {linkName[3]}
               </a>

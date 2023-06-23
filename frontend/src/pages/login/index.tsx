@@ -18,9 +18,9 @@ export default function Login() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex flex-col flex-1">
-            <div className="login-form flex justify-center mt-12">
+            <div className="login-form flex justify-center mt-4">
               <div className="login-form-card rounded-lg shadow-lg px-4 py-6">
                 <form method="POST">
                   <div className="login-form-inputs flex flex-col gap-2">
@@ -46,18 +46,18 @@ export default function Login() {
                     />
                     <button
                       type="submit"
-                      className="text-white rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-purple-400 hover:text-white"
+                      className="text-white rounded-3xl h-10 text-xl bg-orange-600 font-bold hover:bg-purple-400 hover:text-white"
                     >
                       Entrar
                     </button>
                   </div>
                   <div className="mt-6 flex flex-col gap-2 text-purple-400 font-semibold">
-                    <span className="flex justify-center hover:text-orange-400">
+                    <span className="flex justify-center hover:text-orange-600">
                       <Link href="/recover">Esqueci minha senha</Link>
                     </span>
                     <p>
                       Não tem uma conta?
-                      <span className="text-orange-400 text-lg font-bold ml-2">
+                      <span className="text-orange-600 text-lg font-bold ml-2">
                         <Link href="/register">Cadastre-se</Link>
                       </span>
                     </p>

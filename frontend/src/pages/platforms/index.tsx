@@ -69,7 +69,7 @@ export default function Platform() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center">
             <div className="invisible md:visible xl:px-32 lg:px-24">
               <ButtonPrevious path="/preferences" />

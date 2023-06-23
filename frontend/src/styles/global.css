@@ -28,6 +28,14 @@ body {
 }
 
 .selected {
-  box-shadow: 0px 0px 0px 5px #000000; /* Valores ajustáveis para criar a borda */
+  box-shadow: 0px 0px 0px 5px #15113A; /* Valores ajustáveis para criar a borda */
   transition: box-shadow 0.2s ease-in-out;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }

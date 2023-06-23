@@ -18,9 +18,9 @@ export default function Register() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex flex-col flex-1">
-            <div className="login-form flex justify-center mt-11">
+            <div className="login-form flex justify-center mt-4">
               <div className="login-form-card rounded-lg shadow-lg p-6">
                 <form method="POST">
                   <div className="login-form-inputs flex flex-col gap-2">
@@ -57,15 +57,15 @@ export default function Register() {
                     />
                     <button
                       type="submit"
-                      className="text-white mt-4 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-purple-400 hover:text-white"
+                      className="text-white mt-4 rounded-3xl h-10 text-xl bg-orange-600 font-bold hover:bg-purple-400 hover:text-white"
                     >
                       Criar conta
                     </button>
                   </div>
-                  <div className="mt-6 flex justify-center gap-2 text-purple-400 font-semibold">
+                  <div className="mt-4 flex justify-center gap-2 text-purple-400 font-semibold">
                     <p>
                       Já tem uma conta?
-                      <span className="text-orange-400 text-lg font-bold ml-2">
+                      <span className="text-orange-600 text-lg font-bold ml-2">
                         <Link href="/login">Entrar</Link>
                       </span>
                     </p>

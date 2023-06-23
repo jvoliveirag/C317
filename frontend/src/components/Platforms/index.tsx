@@ -32,7 +32,7 @@ const Platforms = () => {
       <div className="flex items-center justify-center">
         <div className="">
           <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
-            <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+            <label className="flex justify-center relative cursor-pointer shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
               <Options
                 id="disney"
                 checked={platDisney}
@@ -43,7 +43,7 @@ const Platforms = () => {
               ></Options>
             </label>
 
-            <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+            <label className="flex justify-center relative cursor-pointer shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
               <Options
                 id="hbo"
                 checked={platHbo}
@@ -54,7 +54,7 @@ const Platforms = () => {
               ></Options>
             </label>
 
-            <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+            <label className="flex justify-center relative cursor-pointer shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
               <Options
                 id="netflix"
                 checked={platNetflix}
@@ -65,7 +65,7 @@ const Platforms = () => {
               ></Options>
             </label>
 
-            <label className="flex justify-center relative cursor-pointer transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
+            <label className="flex justify-center relative cursor-pointer shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300">
               <Options
                 id="prime"
                 checked={platPrime}

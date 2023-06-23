@@ -26,7 +26,7 @@ export const getServerSideProps = async ({
             age: age || 12,
             genre: genre || 'Comedy',
             // eslint-disable-next-line camelcase
-            movie_or_series: movie_or_series || 'TV Show',
+            movie_or_series: movie_or_series || 'Movie',
             // eslint-disable-next-line camelcase
             time_to_spend: time_to_spend || 180,
             platforms: platforms || 'HBO, Netflix, AmazonPrime, Disney',
@@ -116,43 +116,44 @@ export default function Recommendation(props: RecommendationProps) {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center">
-            <div className="mb:mt-8">
-              <h1 className="mt-8 text-white text-4xl font-bold leading-tight flex justify-center items-center">
-                {props.title}
-              </h1>
+            <div className="mb:mt-8 p-6">
+              <div className="bg-slate-500 px-6 py-4 shadow-2xl rounded-lg">
+                <h1 className="text-white md:text-4xl text-2xl font-bold leading-tight flex justify-center items-center px-8">
+                  {props.title}
+                </h1>
 
-              <div className="mt-8 flex items-center justify-center pointer-events-none">
-                <Image src={posterUrl} alt="Poster" width={230} />
+                <div className="mt-6 flex items-center justify-center pointer-events-none">
+                  <Image src={posterUrl} alt="Poster" width={230} />
+                </div>
+
+                <div className="mt-4 items-center justify-center grid col-start-2 col-end-3 text-white gap-2">
+                  <p className="text-xl font-medium">
+                    Lançamento:{' '}
+                    <span className="text-2lg font-semibold text-purple-400">
+                      {props.released}
+                    </span>
+                  </p>
+                  <p className="text-xl font-medium">
+                    Onde assistir:{' '}
+                    <span className="text-2lg font-semibold text-purple-400">
+                      {props.platforms}
+                    </span>
+                  </p>
+                  <p className="text-xl font-medium">
+                    Duração:{' '}
+                    <span className="text-2lg font-semibold text-purple-400">
+                      {props.duration} {movie ? ' minutos' : ' temporadas'}
+                    </span>
+                  </p>
+                </div>
               </div>
-
-              <div className="mt-4 items-center justify-center grid col-start-2 col-end-3 text-white gap-2">
-                <p className="text-xl font-medium">
-                  Lançamento:{' '}
-                  <span className="text-2lg font-semibold text-orange-400">
-                    {props.released}
-                  </span>
-                </p>
-                <p className="text-xl font-medium">
-                  Onde assistir:{' '}
-                  <span className="text-2lg font-semibold text-orange-400">
-                    {props.platforms}
-                  </span>
-                </p>
-                <p className="text-xl font-medium">
-                  Duração:{' '}
-                  <span className="text-2lg font-semibold text-orange-400">
-                    {props.duration} {movie ? ' minutos' : ' temporadas'}
-                  </span>
-                </p>
-              </div>
-
-              <div className="mt-8 flex items-center justify-center gap-4">
+              <div className="mt-8 flex items-center justify-center gap-8">
                 <div className="flex justify-center md:relative">
                   <Link href="/recommendation">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-4xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full md:h-12 h-full p-3 md:py-0 duration-150 bg-orange-600 rounded-full focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                       id="redo-button"
                     >
@@ -164,7 +165,7 @@ export default function Recommendation(props: RecommendationProps) {
                 <div className="flex justify-center md:relative">
                   <Link href="/">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-4xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full md:h-12 h-full p-3 md:py-0 duration-150 bg-orange-600 rounded-full focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                       id="home-button"
                     >
@@ -176,7 +177,7 @@ export default function Recommendation(props: RecommendationProps) {
                 <div className="flex justify-center md:relative">
                   <Link href={userLogged ? '#' : '/login'}>
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-4xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full md:h-12 h-full p-3 md:py-0 duration-150 bg-orange-600 rounded-full focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                       id="save-button"
                     >
@@ -188,7 +189,7 @@ export default function Recommendation(props: RecommendationProps) {
                 <div className="justify-center md:relative hidden">
                   <Link href="/filters">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-4xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full md:h-12 h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                       id="previous-button"
                     >

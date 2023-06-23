@@ -46,10 +46,10 @@ export default function Recover(props: UserProps) {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center">
             <div className="mb:mt-8">
-              <h1 className="mt-8 text-white text-4xl font-bold leading-tight flex justify-center items-center">
+              <h1 className="text-white text-4xl font-bold leading-tight flex justify-center items-center">
                 Perfil do usuário
               </h1>
 
@@ -96,13 +96,13 @@ export default function Recover(props: UserProps) {
                     >
                       <button
                         type="submit"
-                        className="font-medium flex items-center justify-center container text-white rounded-3xl h-10 text-xl bg-orange-400 md:font-bold hover:bg-purple-400 hover:text-white"
+                        className="font-medium flex items-center justify-center container text-white rounded-3xl h-10 text-xl bg-orange-600 md:font-bold hover:bg-purple-400 hover:text-white"
                       >
                         Salvar
                       </button>
                       <button
                         type="submit"
-                        className="font-medium flex items-center justify-center container text-white rounded-3xl h-10 text-xl bg-orange-400 md:font-bold hover:bg-purple-400 hover:text-white"
+                        className="font-medium flex items-center justify-center container text-white rounded-3xl h-10 text-xl bg-orange-600 md:font-bold hover:bg-purple-400 hover:text-white"
                       >
                         Cancelar
                       </button>
@@ -116,7 +116,7 @@ export default function Recover(props: UserProps) {
               <div className="mt-8 flex items-center justify-center gap-4">
                 <div className="flex justify-center md:relative">
                   <button
-                    className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                    className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                     type="submit"
                     onClick={handleEditClick}
                   >
@@ -127,7 +127,7 @@ export default function Recover(props: UserProps) {
                 <div className="flex justify-center md:relative">
                   <Link href="/">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                     >
                       <FaHome />
@@ -138,7 +138,7 @@ export default function Recover(props: UserProps) {
                 <div className="flex justify-center md:relative">
                   <Link href="/#">
                     <button
-                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                      className="flex items-center text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 p-3 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                       type="submit"
                     >
                       <FaTrashAlt />

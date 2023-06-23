@@ -17,9 +17,9 @@ export default function Recover() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex flex-col flex-1">
-            <div className="login-form flex justify-center mt-20">
+            <div className="login-form flex justify-center mt-4">
               <div className="login-form-card rounded-lg shadow-lg p-6">
                 <form method="POST">
                   <div className="login-form-inputs flex flex-col gap-2">
@@ -45,7 +45,7 @@ export default function Recover() {
 
                     <button
                       type="submit"
-                      className="text-white mt-8 rounded-3xl h-10 text-xl bg-orange-400 font-bold hover:bg-purple-400 hover:text-white"
+                      className="text-white mt-4 rounded-3xl h-10 text-xl bg-orange-600 font-bold hover:bg-purple-400 hover:text-white"
                     >
                       Redefinir senha
                     </button>

@@ -16,7 +16,7 @@ const SelectOption: React.FC<SelectOptionProps> = ({
   return (
     <div
       className={`px-4 py-1 rounded-md cursor-pointer font-semibold ${
-        isSelected ? 'bg-orange-400' : 'bg-white text-purple-400'
+        isSelected ? 'bg-orange-600' : 'bg-white text-purple-400'
       }`}
       onClick={() => onSelect(value)}
     >

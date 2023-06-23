@@ -74,15 +74,15 @@ export default function Filter() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
+        <main className="md:flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
           <div className="flex items-center justify-center p-8">
-            <div className="mt-8 md:mt-0 bg-slate-500 p-8 border border-slate-900 rounded-lg">
+            <div className="md:mt-0 bg-slate-500 p-8 shadow-2xl rounded-lg">
               <form onSubmit={handleFormSubmit}>
-                <div className="text-white flex">
-                  <h1 className="text-white text-2xl font-semibold leading-tight flex-1">
+                <div className="text-white flex flex-wrap">
+                  <h1 className="text-white text-2xl font-semibold leading-tight md:flex-1 md:mt-4">
                     Prefere um filminho ou uma seriezinha?
                   </h1>
-                  <div className="flex items-center justify-center md:px-8">
+                  <div className="flex items-center justify-center md:px-8 mt-4">
                     <Select
                       options={options}
                       selectedValue={selectedOption}
@@ -91,7 +91,7 @@ export default function Filter() {
                   </div>
                 </div>
 
-                <div id="age" className="mt-8">
+                <div id="age" className="md:mt-8 mt-4">
                   <h1 className="mb-2 text-white text-xl font-semibold leading-tight">
                     Selecione sua idade:{' '}
                     <span className="text-2xl bg-purple-400 px-2 py-1 rounded-lg">
@@ -119,7 +119,7 @@ export default function Filter() {
                   </h1>
                   <p className="mt-1 text-sm text-gray-300 leading-relaxed">
                     Duração em{' '}
-                    <span className="bg-orange-400 px-2 py-1 rounded-lg text-white">
+                    <span className="bg-orange-600 px-2 py-1 rounded-lg text-white">
                       {selectedOption === 'Filme' ? ' minutos' : ' temporadas'}
                     </span>
                   </p>
@@ -158,24 +158,24 @@ export default function Filter() {
                   A busca será feita por filmes lançados a partir desse ano
                 </p>
 
-                <div className="mt-8">
+                <div className="md:mt-8 mt-4">
                   <h1 className="text-white text-2xl font-semibold leading-tight flex-1">
                     Selecione seu(s) serviços de Streaming
                   </h1>
                   <Platforms></Platforms>
                 </div>
 
-                <div className="mt-8">
+                <div className="md:mt-8 mt-4">
                   <h1 className="text-white text-2xl font-semibold leading-tight flex-1">
                     Gênero(s) que gostaria de assistir
                   </h1>
                   <Genres></Genres>
                 </div>
 
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center mt-8">
                   <button
                     type="submit"
-                    className="bg-orange-400 p-2 border border-purple-400 rounded-lg mt-6 font-bold text-xl"
+                    className="flex items-center md:font-bold text-white text-2xl font-medium shadow-xl transition ease-in-out delay-150 hover:scale-105 h-12 px-6 py-8 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                   >
                     Gerar indicação
                   </button>

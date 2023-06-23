@@ -25,8 +25,8 @@ export default function Home() {
           linkPath={['/profile', '/collection', '#', '#']}
         />
 
-        <main className="flex items-center justify-center flex-wrap flex-col flex-1 pb-10">
-          <div className="">
+        <main className="flex items-center justify-center flex-wrap flex-col flex-1 pb-10 mt-24">
+          <div className="p-4 md:p-0">
             <Image
               src={logo}
               alt="Logo"
@@ -36,7 +36,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="mt-8">
+          <div className="md:mt-8">
             <h1 className="text-white text-center md:text-4xl md:font-bold text-3xl font-light leading-tight md:pt-0 pt-10">
               Sem ideia do que assistir? Sem problemas!
             </h1>
@@ -45,10 +45,10 @@ export default function Home() {
             </h1>
           </div>
 
-          <div className="mt-8 md:col-start-2 md:col-end-6 md:grid md:grid-cols-2 gap-6 ">
+          <div className="md:mt-14 mt-4 md:col-start-2 md:col-end-6 md:grid md:grid-cols-2 gap-6 ">
             <div className="flex flex-1 justify-center md:relative md:p-0 p-4">
               <button
-                className="flex items-center md:font-bold text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-16 py-8 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                className="flex items-center md:font-bold text-white shadow-xl text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-16 py-8 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                 type="submit"
                 onClick={handleClick}
               >
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="flex justify-center md:relative">
               <Link href="/recommendation">
                 <button
-                  className="flex items-center md:font-bold text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-6 py-8 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                  className="flex items-center md:font-bold text-white shadow-xl text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-6 py-8 md:py-0 duration-150 bg-orange-600 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                   type="submit"
                 >
                   Surpreenda-me
