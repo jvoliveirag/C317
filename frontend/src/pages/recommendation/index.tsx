@@ -5,23 +5,32 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { NavBar } from '../../components/NavBar'
 import { FaRedo, FaHome, FaBookmark, FaArrowLeft } from 'react-icons/fa'
+import { GetServerSidePropsContext } from 'next'
 
 const OMDB_API_KEY = '79161b2d'
 const OMDB_BASE_URL = 'https://www.omdbapi.com/'
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({
+  query,
+}: GetServerSidePropsContext) => {
   try {
+    // eslint-disable-next-line camelcase
+    const { age, genre, movie_or_series, time_to_spend, platforms, year } =
+      query
+
     const movieInfo = await Promise.resolve(
       axios.get(
         'https://bj7r4fxsja.execute-api.us-east-1.amazonaws.com/pickMe',
         {
           params: {
-            age: 12,
-            genre: 'Comedy',
-            movie_or_series: 'TV Show',
-            time_to_spend: 180,
-            platforms: 'HBO, Netflix, AmazonPrime, Disney',
-            year: 2000,
+            age: age || 12,
+            genre: genre || 'Comedy',
+            // eslint-disable-next-line camelcase
+            movie_or_series: movie_or_series || 'TV Show',
+            // eslint-disable-next-line camelcase
+            time_to_spend: time_to_spend || 180,
+            platforms: platforms || 'HBO, Netflix, AmazonPrime, Disney',
+            year: year || 2000,
           },
         },
       ),
