@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 const APP_LINK = 'https://pickme-vert.vercel.app' // link da aplicacao em prod
+// eslint-disable-next-line no-unused-vars
 const DEV_LINK = 'http://localhost:3000' // link ambiente dev
 const TEST_LINK = APP_LINK // colocar o link do ambiente que deseja testar
 
