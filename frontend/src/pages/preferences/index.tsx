@@ -1,17 +1,18 @@
-import { useState } from 'react'
-
+import { FormEvent, useState } from 'react'
+import Image from 'next/image'
+import arrowNext from '../../assets/arrow-next.png'
 import action from '../../assets/action.png'
 import comedy from '../../assets/comedy.png'
 import drama from '../../assets/drama.png'
 import fiction from '../../assets/fiction.png'
 import horror from '../../assets/horror.png'
 import romance from '../../assets/romance.png'
-
 import Head from 'next/head'
 import { NavBar } from '../../components/NavBar'
 import ButtonPrevious from '../../components/ButtonPrevious'
-import ButtonNext from '../../components/ButtonNext'
+// import ButtonNext from '../../components/ButtonNext'
 import Options from '../../components/Options/options'
+import { useRouter } from 'next/router'
 
 export default function Genre() {
   const [genAction, setAction] = useState(false)
@@ -21,26 +22,45 @@ export default function Genre() {
   const [genHorror, setHorror] = useState(false)
   const [genRomance, setRomance] = useState(false)
 
-  const platforms = []
+  const genres: string[] = []
   if (genAction === true) {
-    platforms.push('Action')
+    genres.push('Action')
   }
   if (genComedy === true) {
-    platforms.push('Comedy')
+    genres.push('Comedy')
   }
   if (genDrana === true) {
-    platforms.push('Drama')
+    genres.push('Drama')
   }
   if (genFiction === true) {
-    platforms.push('Fiction')
+    genres.push('Fiction')
   }
   if (genHorror === true) {
-    platforms.push('Horror')
+    genres.push('Horror')
   }
   if (genRomance === true) {
-    platforms.push('Romance')
+    genres.push('Romance')
   }
-  console.log(platforms)
+  console.log(genres)
+
+  const stringGenres = JSON.stringify(genres)
+    // eslint-disable-next-line no-useless-escape
+    .replace(/[\[\]"]/g, '')
+    .replace(/,/g, ', ')
+  // console.log(stringGenres) // Action, Drama, Horror
+
+  const router = useRouter()
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const params = {
+      genre: stringGenres,
+    }
+    router.push({
+      pathname: '/platforms',
+      query: params,
+    })
+  }
 
   return (
     <>
@@ -159,7 +179,17 @@ export default function Genre() {
             </div>
 
             <div className="invisible md:visible xl:px-32 lg:px-24">
-              <ButtonNext path="/platforms" />
+              <form onSubmit={handleFormSubmit}>
+                <button type="submit" className="">
+                  <Image
+                    src={arrowNext}
+                    alt=""
+                    quality={100}
+                    width={70}
+                    height={70}
+                  />
+                </button>
+              </form>
             </div>
           </div>
         </main>

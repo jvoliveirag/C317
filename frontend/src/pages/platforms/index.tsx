@@ -1,16 +1,16 @@
-import { useState } from 'react'
-
+import { FormEvent, useState } from 'react'
+import Image from 'next/image'
+import arrowNext from '../../assets/arrow-next.png'
 import ButtonPrevious from '../../components/ButtonPrevious'
-import ButtonNext from '../../components/ButtonNext'
+// import ButtonNext from '../../components/ButtonNext'
 import Options from '../../components/Options/options'
-
 import disney from '../../assets/disneyPlus.png'
 import hbo from '../../assets/hboMax.png'
 import netflix from '../../assets/netflix.png'
 import prime from '../../assets/primeVideo.png'
-
 import Head from 'next/head'
 import { NavBar } from '../../components/NavBar'
+import { useRouter } from 'next/router'
 
 export default function Platform() {
   const [platDisney, setDisney] = useState(false)
@@ -18,7 +18,7 @@ export default function Platform() {
   const [platNetflix, setNetflix] = useState(false)
   const [platPrime, setPrime] = useState(false)
 
-  const platforms = []
+  const platforms: string[] = []
   if (platDisney === true) {
     platforms.push('Disney')
   }
@@ -33,6 +33,29 @@ export default function Platform() {
   }
   console.log(platforms)
   // console.log(platforms.toString())
+
+  const router = useRouter()
+
+  // eslint-disable-next-line camelcase
+  const { genre } = router.query
+  // console.log('genre:', genre)
+  const stringPlatforms = JSON.stringify(platforms)
+    // eslint-disable-next-line no-useless-escape
+    .replace(/[\[\]"]/g, '')
+    .replace(/,/g, ', ')
+  // console.log(stringPlatforms) // Action, Drama, Horror
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const params = {
+      genre: genre || 'Comedy',
+      platforms: stringPlatforms,
+    }
+    router.push({
+      pathname: '/filters',
+      query: params,
+    })
+  }
 
   return (
     <>
@@ -105,7 +128,17 @@ export default function Platform() {
             </div>
 
             <div className="invisible md:visible xl:px-32 lg:px-24">
-              <ButtonNext path="/filters" />
+              <form onSubmit={handleFormSubmit}>
+                <button type="submit" className="">
+                  <Image
+                    src={arrowNext}
+                    alt=""
+                    quality={100}
+                    width={70}
+                    height={70}
+                  />
+                </button>
+              </form>
             </div>
           </div>
         </main>

@@ -1,12 +1,14 @@
-import { useState } from 'react'
-
+import { FormEvent, useState } from 'react'
+import Image from 'next/image'
+import arrowNext from '../../assets/arrow-next.png'
 import ButtonPrevious from '../../components/ButtonPrevious'
-import ButtonNext from '../../components/ButtonNext'
+// import ButtonNext from '../../components/ButtonNext'
 import { Select } from '../../components/Select'
 import { NavBar } from '../../components/NavBar'
 import { RangeSlider } from '../../components/RangeSlider'
 import { YearSelector } from '../../components/YearSelector'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 export default function Filter() {
   const MIN_AGE = 0
@@ -19,9 +21,11 @@ export default function Filter() {
 
   const options = ['Filme', 'Série']
   const [selectedOption, setSelectedOption] = useState(options[0])
+  const [movieOrSeries, setMoviOrSeries] = useState('Movie')
 
   const handleSelect = (option: string) => {
     setSelectedOption(option)
+    option === 'Filme' ? setMoviOrSeries('Movie') : setMoviOrSeries('TV Show')
   }
 
   const [ageSliderValue, setAgeSliderValue] = useState(MIN_AGE)
@@ -41,6 +45,28 @@ export default function Filter() {
   const [year, setYear] = useState(MIN_YEAR) // função para pegar o ano atual e setar como maxValue
   const handleYearSelected = (value: number) => {
     setYear(value)
+  }
+
+  const router = useRouter()
+
+  // eslint-disable-next-line camelcase
+  const { genre, platforms } = router.query
+  console.log('genres:', genre)
+  console.log('platforms:', platforms)
+
+  const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const params = {
+      age: String(ageSliderValue),
+      genre: String(genre),
+      movie_or_series: movieOrSeries,
+      time_to_spend: String(durationSliderValue),
+      platforms: String(platforms),
+      year: String(year),
+    }
+    // Serialize os parâmetros usando new URLSearchParams()
+    const serializedParams = new URLSearchParams(params).toString()
+    router.push(`/recommendation?${serializedParams}`)
   }
 
   return (
@@ -150,7 +176,17 @@ export default function Filter() {
               id="button-next"
               className="invisible md:visible xl:px-32 lg:px-24"
             >
-              <ButtonNext path="/recommendation" />
+              <form onSubmit={handleFormSubmit}>
+                <button type="submit" className="">
+                  <Image
+                    src={arrowNext}
+                    alt=""
+                    quality={100}
+                    width={70}
+                    height={70}
+                  />
+                </button>
+              </form>
             </div>
           </div>
         </main>
