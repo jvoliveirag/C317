@@ -27,7 +27,7 @@ const NavBar: React.FC<NavBarProps> = ({ linkName, linkPath }) => {
         <Link href="/" className="flex items-center">
           <Image src={logoImg} height={40} width={40} alt="PickMe Logo" />
           <span className="ml-4 self-center text-2xl font-semibold whitespace-nowrap text-white">
-            PickMe
+            Pick for me!
           </span>
         </Link>
 

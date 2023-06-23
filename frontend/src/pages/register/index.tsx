@@ -77,7 +77,7 @@ export default function Register() {
         </main>
 
         <footer className="flex items-center justify-center text-sm align-baseline text-white">
-          <p>₢ 2023 PickMe | Todos os direitos reservados</p>
+          <p>₢ 2023 Pick for me! | Todos os direitos reservados</p>
         </footer>
       </div>
     </>

@@ -46,6 +46,7 @@ describe('Teste dos botões da página de recomendação', () => {
     cy.url().should('include', '/login') // implementar logica de caso esteja logado
   })
 
+  // FUNCIONALIDADE TEMPORARIAMENTE REMOVIDA
   // it('Voltar: deve redirecionar para a página anterior.', () => {
   //   cy.get("[id='previous-button']") // Seletor para o elemento
   //     .click()
@@ -124,6 +125,8 @@ describe('Teste da barra de navegação', () => {
     cy.visit(TEST_LINK)
   })
 
+  // FUNCIONALIDADE TEMPORARIAMENTE REMOVIDA
+  /*
   it('Perfil: deve redirecionar para o perfil do usuário', () => {
     cy.get('[id="navbar-solid-bg"]').contains('Perfil').click()
     cy.url().should('include', '/profile') // Verifica se a URL redirecionou para o perfil
@@ -133,6 +136,7 @@ describe('Teste da barra de navegação', () => {
     cy.get('[id="navbar-solid-bg"]').contains('Coleção').click()
     cy.url().should('include', '/collection') // Verifica se a URL redirecionou para a coleção
   })
+  */
 
   it('Ajuda: deve redirecionar o usuário para a documentação do projeto', () => {
     cy.get('[id="navbar-solid-bg"]').contains('Ajuda').click()
