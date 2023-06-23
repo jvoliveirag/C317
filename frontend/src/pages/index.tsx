@@ -3,8 +3,16 @@ import Image from 'next/image'
 import Head from 'next/head'
 import logo from '../assets/logo.png'
 import { NavBar } from '../components/NavBar'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter()
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768
+
+  const handleClick = () => {
+    const href = isMobile ? '/form' : '/preferences'
+    router.push(href)
+  }
   return (
     <>
       <Head>
@@ -38,21 +46,20 @@ export default function Home() {
           </div>
 
           <div className="mt-8 md:col-start-2 md:col-end-6 md:grid md:grid-cols-2 gap-6 ">
-            <div className="flex-1 invisible md:visible">
-              <Link href="/preferences">
-                <button
-                  className="font-bold text-white text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-2 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
-                  type="submit"
-                >
-                  Começar
-                </button>
-              </Link>
+            <div className="flex flex-1 justify-center md:relative md:p-0 p-4">
+              <button
+                className="flex items-center md:font-bold text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-16 py-8 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                type="submit"
+                onClick={handleClick}
+              >
+                Começar
+              </button>
             </div>
 
             <div className="flex justify-center md:relative">
               <Link href="/recommendation">
                 <button
-                  className="flex items-center md:font-bold text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-8 py-8 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
+                  className="flex items-center md:font-bold text-white text-3xl font-medium md:text-2xl transition ease-in-out delay-150 hover:scale-105 w-full h-12 px-6 py-8 md:py-0 duration-150 bg-orange-400 rounded-3xl focus:shadow-outline hover:bg-purple-400 hover:text-white"
                   type="submit"
                 >
                   Surpreenda-me
