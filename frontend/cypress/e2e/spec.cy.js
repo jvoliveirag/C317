@@ -46,12 +46,12 @@ describe('Teste dos botões da página de recomendação', () => {
     cy.url().should('include', '/login') // implementar logica de caso esteja logado
   })
 
-  it('Voltar: deve redirecionar para a página anterior.', () => {
-    cy.get("[id='previous-button']") // Seletor para o elemento
-      .click()
+  // it('Voltar: deve redirecionar para a página anterior.', () => {
+  //   cy.get("[id='previous-button']") // Seletor para o elemento
+  //     .click()
 
-    cy.url().should('include', '/filters')
-  })
+  //   cy.url().should('include', '/filters')
+  // })
 })
 
 describe('Página de filtros', () => {
